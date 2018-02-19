@@ -11,29 +11,49 @@
 	
 	<h1>Welcome!</h1>
 	<br>
-	<h2> This is the home page<h2>
-	<br>
-	<h2>Please use the menu at the bottom to get around<h2>
+	<h2>Use the menu at the bottom to get around<h2>
 
 	
 </head>
 
 <body>
   
-	<div data-role="footer" data-position="fixed">
-	<!--<h1>Fixed Footer!</h1>-->
+  <div> <!-- home page -->
+  <div data-role="page" id="home">
+  <div data-role="panel" id="menu"> 
+    <h2>Menu</h2>
+    <p>Some text in the menu..</p>
+  </div> 
+
+  <div data-role="header" data-position="fixed">
+    <h1>Student Organisation App</h1>
+	<a href="#menu" class="ui-btn ui-btn-inline">Open Menu</a>
+  </div>
+
+  <div data-role="main" class="ui-content">
+
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <h1>Footer Text</h1>
+  </div> 
+</div>
+
+  <div> <!-- home page -->
+
+  <!--	<div data-role="footer" data-position="fixed"> <!-- footer -->
 	
 	<!-- http://demos.jquerymobile.com/1.2.1/docs/buttons/buttons-icons.html --> 
 	
-		<div data-role="navbar">
-			<ul>
+		  <!--<div data-role="navbar"><!-- navbar -->
+			  <!--<ul>
 				<li><a href="index.html" data-icon="home" data-iconpos="left">Home</a></li>
 				<li><a href="deadlines.html"  data-icon="alert">Deadlines</a></li>
 				<li><a href="timetable.html" data-icon="grid">Timetable</a></li>
 			</ul>
-		</div><!-- /navbar -->
-	</div>
-	
+		</div><!-- navbar -->
+		
+	  <!--</div> <!-- footer -->
 
 </body>
 </html>

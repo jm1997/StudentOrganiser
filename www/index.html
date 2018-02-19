@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
+<!-- -->
+    
     <title>Student Organisation</title>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
@@ -8,64 +11,116 @@
     <script src="jquery-mobile/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
     <script src="js/index.js"type="text/javascript" charset="utf-8"></script>
 	<link href="jquery-mobile/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
-	
-	<h1>Welcome!</h1>
-	<br>
-	<h2>Use the menu at the bottom to get around<h2>
-
-	
+		
 </head>
 
 <body>
   
-  <div> <!-- home page -->
-  <div data-role="page" id="home">
+    
+    
+    
+ 
+  <div data-role="page" id="homePage"> <!-- home page -->
   
-  <div data-role="panel" id="menu"> 
-    <h2>Menu</h2>
-    <p>Some text in the menu..</p>
-	<ul>
-				<li><a href="#" data-icon="home" data-iconpos="left">Home</a></li>
-				<li><a href="#"  data-icon="alert">Deadlines</a></li>
-				<li><a href="#" data-icon="grid">Timetable</a></li>
+	   <div data-role="panel" id="menu" data-display="push"> 
+		<h2>Menu</h2>
+		<p>Sample text in the menu..</p>
+			<ul>
+				<!-- links to pages -->
+				<li><a href="#homePage" data-icon="home" data-iconpos="left">Home</a></li>
+				<li><a href="#deadlinePage"  data-icon="alert">Deadlines</a></li>
+				<li><a href="#timetablePage" data-icon="grid">Timetable</a></li>
 			</ul>
-  </div> 
+	   </div> 
 
-  <div data-role="header" data-position="fixed">
-    <h1>Student Organisation App</h1>
-	<a href="#menu" class="ui-btn ui-btn-inline">Open Menu</a>
+	   <div data-role="header" data-position="fixed">
+		  <h1>Student Organisation App</h1>
+           <a href="#menu" class="ui-btn ui-btn-inline">Open Menu</a>
+	   </div>
+
+	   <div data-role="main" class="ui-content">
+            <h2>home page</h2>
+	   </div>
+
+	   <div data-role="footer" data-position="fixed">
+		  <h1>Footer Text</h1>
+	   </div> 
+  
+	</div>
+
+    
+    
+    
+    
+    
+    
+    <!-- TIMETABLE PAGE -->
+    
+	<div data-role="page" id="timetablePage">
+        
+        <div data-role="panel" id="menu" data-display="push"> 
+		<h2>Menu</h2>
+		<p>Sample text in the menu..</p>
+			<ul>
+				<!-- links to pages -->
+				<li><a href="#homePage" data-icon="home" data-iconpos="left">Home</a></li>
+				<li><a href="#deadlinePage"  data-icon="alert">Deadlines</a></li>
+				<li><a href="#timetablePage" data-icon="grid">Timetable</a></li>
+			</ul>
+	   </div> 
+        
+  <div data-role="header">
+    <h1>Welcome To My timetable</h1>
   </div>
 
   <div data-role="main" class="ui-content">
+        <h2>timetable page</h2>
+  </div>
 
+  <div data-role="footer">
+    <h1>Footer Text</h1>
+  </div>
+</div> 
+    
+    
+    
+    
+    
+   
+    
+    
+    
+    
+    
+    <!-- DEADLINE PAGE -->
+    
+    
+    <div data-role="page" id="deadlinePage">
+        
+        <div data-role="panel" id="menu" data-display="push"> 
+		<h2>Menu</h2>
+		<p>Sample text in the menu..</p>
+			<ul>
+				<!-- links to pages -->
+				<li><a href="#homePage" data-icon="home" data-iconpos="left">Home</a></li>
+				<li><a href="#deadlinePage"  data-icon="alert">Deadlines</a></li>
+				<li><a href="#timetablePage" data-icon="grid">Timetable</a></li>
+			</ul>
+	   </div> 
+        
+        
+  <div data-role="header" data-position="fixed">
+    <h1>Welcome To your deadlines</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+         <h2>deadline page</h2>
   </div>
 
   <div data-role="footer" data-position="fixed">
     <h1>Footer Text</h1>
-  </div> 
-  
+  </div>
 </div>
-
-  <div> <!-- home page -->
-  
-  
-  
-  
-  
-
-  <!--	<div data-role="footer" data-position="fixed"> <!-- footer -->
-	
-	<!-- http://demos.jquerymobile.com/1.2.1/docs/buttons/buttons-icons.html --> 
-	
-		  <!--<div data-role="navbar"><!-- navbar -->
-			  <!--<ul>
-				<li><a href="index.html" data-icon="home" data-iconpos="left">Home</a></li>
-				<li><a href="deadlines.html"  data-icon="alert">Deadlines</a></li>
-				<li><a href="timetable.html" data-icon="grid">Timetable</a></li>
-			</ul>
-		</div><!-- navbar -->
-		
-	  <!--</div> <!-- footer -->
 
 </body>
 </html>

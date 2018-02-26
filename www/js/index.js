@@ -16,6 +16,7 @@ $(document).on("pagecreate","#homePage",function(){
     openSettings();
     }); 
     
+    
 });            
 
 
@@ -34,3 +35,4 @@ function openTimetable() {
 function openSettings() {
 	$.mobile.navigate( "#settingsPage" );
 }
+

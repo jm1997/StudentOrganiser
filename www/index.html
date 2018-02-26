@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    
 <head>
     
 <!-- -->
@@ -22,107 +23,145 @@
  
   <div data-role="page" id="homePage"> <!-- home page -->
   
+       <!-- MENU --> 
 	   <div data-role="panel" id="menu" data-display="push"> 
-		<h2>Menu</h2>
+           
+		<h2>Menu</h2> <br>
 		<p>Click the buttons below to naviagate between pages</p>
-			<ul>
-				<!-- links to pages -->
-				<li><a href="#homePage" data-icon="home" data-iconpos="left">Home</a></li>
-				<li><a href="#deadlinePage"  data-icon="alert">Deadlines</a></li>
-				<li><a href="#timetablePage" data-icon="grid">Timetable</a></li>
-			</ul>
+           
+                <!-- links to pages -->
+                <button id="homeButton" data-icon="home">Home</button>
+                <button id="deadlineButton" data-icon="alert">Deadlines</button>
+                <button id="timetableButton" data-icon="grid">Timetable</button>
+                <button id="settingsButton" data-icon="gear">Settings</button>           
 	   </div> 
-
-	   <div data-role="header" data-position="fixed">
-		  <h1>Student Organisation App</h1>
+      
+      
+       <!-- HEADER BAR -->  
+	   <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
+		  <h1>S.O.S</h1>
            <a href="#menu" class="ui-btn ui-btn-inline">Open Menu</a>
 	   </div>
 
 	   <div data-role="main" class="ui-content">
-            <h2>home page</h2>
+            <h2 align="center">Welcome to S.O.S - Student Organisation System</h2>
 	   </div>
-
-	   <div data-role="footer" data-position="fixed">
-		  <h1>What is the point of a footer???</h1>
+      
+       <!-- FOOTER BAR -->  
+	   <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
+		  <h1>Sample Footer Text</h1>
 	   </div> 
   
-	</div>
+	</div> <!-- close home page -->
 
-    
-    
-    
-    
-    
+<!-- PAGE BREAK -->    
+<!-- PAGE BREAK -->      
+<!-- PAGE BREAK -->        
     
     <!-- TIMETABLE PAGE -->
     
 	<div data-role="page" id="timetablePage">
         
+        <!-- MENU --> 
         <div data-role="panel" id="menu" data-display="push"> 
-		<h2>Menu</h2>
+		<h2>Menu</h2> <br>
 		<p>Click the buttons below to naviagate between pages</p>
-			<ul>
-				<!-- links to pages -->
-				<li><a href="#homePage" data-icon="home" data-iconpos="left">Home</a></li>
-				<li><a href="#deadlinePage"  data-icon="alert">Deadlines</a></li>
-				<li><a href="#timetablePage" data-icon="grid">Timetable</a></li>
-			</ul>
-	   </div> 
+           
+                <!-- links to pages -->
+                <button id="homeButton" data-icon="home">Home</button>
+                <button id="deadlineButton" data-icon="alert">Deadlines</button>
+                <button id="timetableButton" data-icon="grid">Timetable</button>
+                <button id="settingsButton" data-icon="gear">Settings</button>           
+	   </div>
         
-  <div data-role="header">
-    <h1>Welcome To My timetable</h1>
-      <a href="#menu" class="ui-btn ui-btn-inline">Open Menu</a>
-  </div>
+       <!-- HEADER BAR -->  
+       <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
+           <h1>S.O.S</h1>
+           <a href="#menu" class="ui-btn ui-btn-inline">Open Menu</a>
+       </div>
 
-  <div data-role="main" class="ui-content">
-        <h2>timetable page</h2>
-  </div>
-
-  <div data-role="footer">
-    <h1>What is the point of a footer???</h1>
-  </div>
-</div> 
+       <div data-role="main" class="ui-content">
+           <h2 align="center">timetable page</h2>
+       </div>
+        
+       <!-- FOOTER BAR -->  
+       <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
+            <h1>Sample Footer Text</h1>
+       </div>
+        
+</div> <!-- close timetable page -->
     
-    
-    
-    
-    
-   
-    
-    
-    
-    
-    
+<!-- PAGE BREAK -->  
+<!-- PAGE BREAK -->      
+<!-- PAGE BREAK -->      
+       
     <!-- DEADLINE PAGE -->
-    
-    
     <div data-role="page" id="deadlinePage">
         
+        <!-- MENU --> 
         <div data-role="panel" id="menu" data-display="push"> 
-		<h2>Menu</h2>
+		<h2>Menu</h2> <br>
 		<p>Click the buttons below to naviagate between pages</p>
-			<ul>
-				<!-- links to pages -->
-				<li><a href="#homePage" data-icon="home" data-iconpos="left">Home</a></li>
-				<li><a href="#deadlinePage"  data-icon="alert">Deadlines</a></li>
-				<li><a href="#timetablePage" data-icon="grid">Timetable</a></li>
-			</ul>
+           
+                <!-- links to pages -->
+                <button id="homeButton" data-icon="home">Home</button>
+                <button id="deadlineButton" data-icon="alert">Deadlines</button>
+                <button id="timetableButton" data-icon="grid">Timetable</button>
+                <button id="settingsButton" data-icon="gear">Settings</button>           
 	   </div> 
         
+        <!-- HEADER BAR --> 
+        <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
+            <h1>S.O.S</h1>
+            <a href="#menu" class="ui-btn ui-btn-inline">Open Menu</a>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <h2 align="center">Deadline Page</h2>
+        </div>
         
-  <div data-role="header" data-position="fixed">
-    <h1>Welcome To your deadlines</h1>
-      <a href="#menu" class="ui-btn ui-btn-inline">Open Menu</a>
-  </div>
+        <!-- FOOTER BAR --> 
+        <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
+            <h1>Sample Footer Text</h1>
+        </div>
+        
+    </div> <!-- close deadline page -->
 
-  <div data-role="main" class="ui-content">
-         <h2>deadline page</h2>
-  </div>
+<!-- PAGE BREAK -->  
+<!-- PAGE BREAK -->      
+<!-- PAGE BREAK -->      
+       
+    <!-- SETTINGS PAGE -->
+    <div data-role="page" id="settingsPage">
+        
+        <!-- MENU --> 
+        <div data-role="panel" id="menu" data-display="push"> 
+		<h2>Menu</h2> <br>
+		<p>Click the buttons below to naviagate between pages</p>
+           
+                <!-- links to pages -->
+                <button id="homeButton" data-icon="home">Home</button>
+                <button id="deadlineButton" data-icon="alert">Deadlines</button>
+                <button id="timetableButton" data-icon="grid">Timetable</button>
+                <button id="settingsButton" data-icon="gear">Settings</button>           
+	   </div> 
+        
+        <!-- HEADER BAR --> 
+        <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
+            <h1>S.O.S</h1>
+            <a href="#menu" class="ui-btn ui-btn-inline">Open Menu</a>
+        </div>
 
-  <div data-role="footer" data-position="fixed">
-    <h1>What is the point of a footer???</h1>
-  </div>
-</div>
-
+        <div data-role="main" class="ui-content">
+            <h2 align="center">Settings Page</h2>
+        </div>
+        
+        <!-- FOOTER BAR --> 
+        <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
+            <h1>Sample Footer Text</h1>
+        </div>
+        
+    </div> <!-- close settings page -->
+    
 </body>
 </html>

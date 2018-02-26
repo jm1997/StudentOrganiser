@@ -24,7 +24,10 @@
   <div data-role="page" id="homePage"> <!-- home page -->
   
        <!-- MENU --> 
-        <div data-role="panel" id="menu" data-display="push"> 
+        <div data-role="panel" id="menu" data-display="overlay"> 
+            
+        <!-- http://demos.jquerymobile.com/1.4.5/panel/ -->
+            
 		<h2>Menu</h2> <br>
 		<p>Click the buttons below to naviagate between pages</p>
            
@@ -33,7 +36,7 @@
                 <button id="deadlineButton" data-icon="alert">Deadlines</button>
                 <button id="timetableButton" data-icon="grid">Timetable</button>
                 <button id="settingsButton" data-icon="gear">Settings</button>           
-	   </div>
+	   </div> <!-- end menu -->
       
       
        <!-- HEADER BAR -->  
@@ -41,10 +44,11 @@
 		  <h1>S.O.S</h1>
            <a href="#menu" class="ui-btn ui-btn-inline">Open Menu</a>
 	   </div>
-
-	   <div data-role="main" class="ui-content">
-            <h2 align="center">Welcome to S.O.S - Student Organisation System</h2>
-	   </div>
+      
+        <!-- PAGE CONTENT -->
+        <div data-role="main" class="ui-content">
+            <h2 align="center">Welcome to S.O.S - Student Organisational System</h2>
+        </div>
       
        <!-- FOOTER BAR -->  
 	   <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
@@ -62,7 +66,7 @@
 	<div data-role="page" id="timetablePage">
         
         <!-- MENU --> 
-        <div data-role="panel" id="menu" data-display="push"> 
+        <div data-role="panel" id="menu" data-display="overlay"> 
 		<h2>Menu</h2> <br>
 		<p>Click the buttons below to naviagate between pages</p>
            
@@ -98,7 +102,7 @@
     <div data-role="page" id="deadlinePage">
         
         <!-- MENU --> 
-        <div data-role="panel" id="menu" data-display="push"> 
+        <div data-role="panel" id="menu" data-display="overlay"> 
 		<h2>Menu</h2> <br>
 		<p>Click the buttons below to naviagate between pages</p>
            
@@ -134,7 +138,7 @@
     <div data-role="page" id="settingsPage">
         
         <!-- MENU --> 
-        <div data-role="panel" id="menu" data-display="push"> 
+        <div data-role="panel" id="menu" data-display="overlay"> 
 		<h2>Menu</h2> <br>
 		<p>Click the buttons below to naviagate between pages</p>
            

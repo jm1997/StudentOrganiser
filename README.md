@@ -1,3 +1,3 @@
-phonegap-lifecycle-test
+S.O.S - Student Organisation System
 =======================
- A simple PhoneGap Build application that counts the occurances of application lifecycle events 
+COMP2361 - Assignment 02 - 16016599

@@ -1,7 +1,7 @@
 document.addEventListener("deviceready", function(){
     $('#mypanel').enhanceWithin().panel();
     
-    //OPEN MENU
+    //OPEN MENU WITH SWIPE
 $('body').on('swiperight', function () {
     $('#mypanel').panel('open', '');
 });

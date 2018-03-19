@@ -1,14 +1,15 @@
 document.addEventListener("deviceready", function(){
     $('#mypanel').enhanceWithin().panel();
     
-    $(document).on("pageinit", "#homePage", function(openPanel) {
-        if($.mobile.active.jqpData("mypanel")!== "open") {
-        if(openPanel.type === "swiperight" ){
-            $("#mypanel").panel("open");
-        }
-        }
-        });
+    //OPEN MENU
+$('body').on('swiperight', function () {
+    $('#mypanel').panel('open', '');
 });
+});
+
+
+
+
 
 $(document).on("pagecreate","#homePage",function(){
     

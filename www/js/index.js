@@ -4,6 +4,14 @@ document.addEventListener("deviceready", function(){
 
 $(document).on("pagecreate","#homePage",function(){
     
+    $(document).on("pageinit", "#homePage", function(openPanel) {
+        if($.mobile.active.jqpData("mypanel")!== "open") {
+        if(openPanel.type === "swiperight" ){
+            $("#mypanel").panel("open");
+        }
+        }
+    }
+    
     //HOME BUTTON
     $('#homeButton').on("click", function(){
     openHome();
@@ -25,7 +33,9 @@ $(document).on("pagecreate","#homePage",function(){
     }); 
     
     
-});            
+});  
+
+
 
 //HOME BUTTON
 function openHome() {

@@ -1,8 +1,5 @@
 document.addEventListener("deviceready", function(){
     $('#mypanel').enhanceWithin().panel();
-});
-
-$(document).on("pagecreate","#homePage",function(){
     
     $(document).on("pageinit", "#homePage", function(openPanel) {
         if($.mobile.active.jqpData("mypanel")!== "open") {
@@ -10,7 +7,11 @@ $(document).on("pagecreate","#homePage",function(){
             $("#mypanel").panel("open");
         }
         }
-    }
+        });
+});
+
+$(document).on("pagecreate","#homePage",function(){
+    
     
     //HOME BUTTON
     $('#homeButton').on("click", function(){

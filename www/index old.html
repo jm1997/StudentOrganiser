@@ -17,21 +17,32 @@
 
 <body>
   
-   
-
-<!-- PAGE BREAK -->    
-<!-- PAGE BREAK -->      
-<!-- PAGE BREAK -->        
-       
+    
     
   <!-- HOME PAGE -->
  
-  <div data-role="page" id="homePage"> <!-- home page -->     
+  <div data-role="page" id="homePage"> <!-- home page -->
+  
+       <!-- MENU --> 
+        <div data-role="panel" id="menu" data-display="overlay"> 
+            
+        <!-- http://demos.jquerymobile.com/1.4.5/panel/ -->
+            
+		<h2>Menu</h2> <br>
+		<p>Click the buttons below to naviagate between pages</p>
            
+                <!-- links to pages -->
+                <button id="homeButton" data-icon="home">Home</button>
+                <button id="deadlineButton" data-icon="alert">Deadlines</button>
+                <button id="timetableButton" data-icon="grid">Timetable</button>
+                <button id="settingsButton" data-icon="gear">Settings</button>           
+	   </div> <!-- end menu -->
+      
+      
        <!-- HEADER BAR -->  
 	   <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
 		  <h1>S.O.S</h1>
-           <a href="#mypanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-ajax="false">Menu</a>
+           <a href="#menu" class="ui-btn ui-btn-inline">Open Menu</a>
 	   </div>
       
         <!-- PAGE CONTENT -->
@@ -53,12 +64,23 @@
     <!-- TIMETABLE PAGE -->
     
 	<div data-role="page" id="timetablePage">
-
+        
+        <!-- MENU --> 
+        <div data-role="panel" id="menu1" data-display="overlay"> 
+		<h2>Menu</h2> <br>
+		<p>Click the buttons below to naviagate between pages</p>
+           
+                <!-- links to pages -->
+                <button id="homeButton" data-icon="home">Home</button>
+                <button id="deadlineButton" data-icon="alert">Deadlines</button>
+                <button id="timetableButton" data-icon="grid">Timetable</button>
+                <button id="settingsButton" data-icon="gear">Settings</button>           
+	   </div>
         
        <!-- HEADER BAR -->  
        <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
            <h1>S.O.S</h1>
-           <a href="#mypanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-ajax="false">Menu</a>
+           <a href="#menu1" class="ui-btn ui-btn-inline">Open Menu</a>
        </div>
 
        <div data-role="main" class="ui-content">
@@ -78,12 +100,23 @@
        
     <!-- DEADLINE PAGE -->
     <div data-role="page" id="deadlinePage">
-
+        
+        <!-- MENU --> 
+        <div data-role="panel" id="menu2" data-display="overlay"> 
+		<h2>Menu</h2> <br>
+		<p>Click the buttons below to naviagate between pages</p>
+           
+                <!-- links to pages -->
+                <button id="homeButton" data-icon="home">Home</button>
+                <button id="deadlineButton" data-icon="alert">Deadlines</button>
+                <button id="timetableButton" data-icon="grid">Timetable</button>
+                <button id="settingsButton" data-icon="gear">Settings</button>           
+	   </div>
         
         <!-- HEADER BAR --> 
         <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
             <h1>S.O.S</h1>
-            <a href="#mypanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-ajax="false">Menu</a>
+            <a href="#menu2" class="ui-btn ui-btn-inline">Open Menu</a>
         </div>
 
         <div data-role="main" class="ui-content">
@@ -103,11 +136,23 @@
        
     <!-- SETTINGS PAGE -->
     <div data-role="page" id="settingsPage">
-
+        
+        <!-- MENU --> 
+        <div data-role="panel" id="menu3" data-display="overlay"> 
+		<h2>Menu</h2> <br>
+		<p>Click the buttons below to naviagate between pages</p>
+           
+                <!-- links to pages -->
+                <button id="homeButton" data-icon="home">Home</button>
+                <button id="deadlineButton" data-icon="alert">Deadlines</button>
+                <button id="timetableButton" data-icon="grid">Timetable</button>
+                <button id="settingsButton" data-icon="gear">Settings</button>           
+	   </div>
+        
         <!-- HEADER BAR --> 
         <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
             <h1>S.O.S</h1>
-            <a href="#mypanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-ajax="false">Menu</a>
+            <a href="#menu3" class="ui-btn ui-btn-inline">Open Menu</a>
         </div>
 
         <div data-role="main" class="ui-content">
@@ -121,26 +166,5 @@
         
     </div> <!-- close settings page -->
     
-  
-<!-- PAGE BREAK -->  
-<!-- PAGE BREAK -->      
-<!-- PAGE BREAK -->
-    
-    
-     <!-- EXTERNAL PANEL -->
-    <!-- MENU --> 
-    <div data-role="panel" id="mypanel" data-display="overlay"> 
-            
-        <!-- http://demos.jquerymobile.com/1.4.5/panel/ -->
-        <div class="ui-panel-inner">    
-		<h2>Menu</h2> <br>
-		<p>Click the buttons below to naviagate between pages</p>
-                <!-- links to pages -->
-                <button id="homeButton" data-icon="home">Home</button>
-                <button id="deadlineButton" data-icon="alert">Deadlines</button>
-                <button id="timetableButton" data-icon="grid">Timetable</button>
-                <button id="settingsButton" data-icon="gear">Settings</button>
-        </div>
-    </div> <!-- end menu -->
 </body>
 </html>

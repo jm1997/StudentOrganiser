@@ -1,3 +1,7 @@
+document.addEventListener("deviceready", function(){
+    $('#mypanel').enhanceWithin().panel();
+});
+
 $(document).on("pagecreate","#homePage",function(){
     
     //HOME BUTTON

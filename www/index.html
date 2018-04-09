@@ -3,7 +3,7 @@
     
 <head>
 
-<link rel="stylesheet" type="text/css" href="mystyle.css">   
+<link rel="stylesheet" type="text/css" href="stylesheet.css">   
     
 <!-- -->
     
@@ -52,8 +52,7 @@
     <!-- TIMETABLE PAGE -->
     
 	<div data-role="page" id="timetablePage">
-
-        
+      
        <!-- HEADER BAR -->  
        <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
            <h1>S.O.S</h1>
@@ -77,12 +76,12 @@
        
     <!-- DEADLINE PAGE -->
     <div data-role="page" id="deadlinePage">
-
         
         <!-- HEADER BAR --> 
         <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
             <h1>S.O.S</h1>
             <a href="#mypanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-ajax="false">Menu</a>
+            <button id="addButton" data-icon="plus"></button>
         </div>
 
         <div data-role="main" class="ui-content">
@@ -120,14 +119,41 @@
         
     </div> <!-- close settings page -->
     
+<!-- PAGE BREAK -->  
+<!-- PAGE BREAK -->      
+<!-- PAGE BREAK -->      
+       
+    <!-- ADD DEADLINE PAGE -->
+    <div data-role="page" id="addDeadlinePage">
+
+        <!-- HEADER BAR --> 
+        <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
+            <h1>S.O.S</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            
+            <h2 align="center">Add a Deadline</h2>
+            
+            <ul style="list-style-type:none">
+                <li><button id="saveButton" data-icon="check">Save</button></li>
+                <li><button id="cancelButton" data-icon="delete">Cancel</button></li>
+            </ul>
+            
+        </div>
+        
+        <!-- FOOTER BAR --> 
+        <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
+            <h1>Sample Footer Text</h1>
+        </div>
+        
+    </div> <!-- close add deadline page -->   
   
 <!-- PAGE BREAK -->  
 <!-- PAGE BREAK -->      
 <!-- PAGE BREAK -->
-    
-    
-     <!-- EXTERNAL PANEL -->
-    <!-- MENU --> 
+        
+    <!-- EXTERNAL PANEL -->
     <div data-role="panel" id="mypanel" data-display="push"> 
             
         <!-- http://demos.jquerymobile.com/1.4.5/panel/ -->
@@ -140,6 +166,6 @@
                 <button id="timetableButton" data-icon="grid">Timetable</button>
                 <button id="settingsButton" data-icon="gear">Settings</button>
         </div>
-    </div> <!-- end menu -->
+    </div> <!-- end panel -->
 </body>
 </html>

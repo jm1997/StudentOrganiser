@@ -15,12 +15,12 @@ $(document).on("pagecreate","#homePage",function(){
     
     
     //HOME BUTTON
-    $('#homeButton').on("click", function(){
+    $('#homeButton').on("click", function(){ //run openHome function when home button is clicked
     openHome();
     });  
    
     //DEADLINE BUTTON
-    $('#deadlineButton').on("click", function(){
+    $('#deadlineButton').on("click", function(){ //run openDeadlines function when deadline button is clicked
     openDeadlines();
     }); 
     
@@ -34,6 +34,21 @@ $(document).on("pagecreate","#homePage",function(){
     openSettings();
     }); 
     
+    //ADD DEADLINE BUTTON       
+    $('#addDeadlineButton').on("click", function(){
+    openAddDeadline();
+    }); 
+    
+    //SAVE BUTTON
+    $('#saveButton').on("click", function(){
+    save();
+    }); 
+    
+    //CANCEL BUTTON
+    $('#cancelButton').on("click", function(){
+    cancel();
+    }); 
+    
     
 });  
 
@@ -41,21 +56,33 @@ $(document).on("pagecreate","#homePage",function(){
 
 //HOME BUTTON
 function openHome() {
-	$.mobile.navigate( "#homePage" );
+	$.mobile.navigate( "#homePage" ); //open home page
 }
 
 //DEADLINE BUTTON
 function openDeadlines() {
-	$.mobile.navigate( "#deadlinePage" );
+	$.mobile.navigate( "#deadlinePage" ); //open deadline page
 }
 
 //TIMETABLE BUTTON
 function openTimetable() {
-	$.mobile.navigate( "#timetablePage" );
+	$.mobile.navigate( "#timetablePage" ); //open timetable page
 }
 
 //SETTINGS BUTTON
 function openSettings() {
-	$.mobile.navigate( "#settingsPage" );
+	$.mobile.navigate( "#settingsPage" ); //open settings page
 }
 
+//ADD DEADLINE BUTTON
+function openAddDeadline() {
+	$.mobile.navigate( "#addDeadlinePage" ); //open add deadline page
+}
+
+
+//SAVE
+
+//CANCEL
+function cancel() {
+	$.mobile.navigate( "#deadlinePage" ); //return to deadline page
+}

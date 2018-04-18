@@ -64,6 +64,10 @@ $(document).on("pagecreate",function(){
     cancel();
     }); 
     
+    //DATE BUTTON
+    $('#dateButton').on("click", function(){
+    addDate();
+    }); 
     
 });  
 
@@ -96,10 +100,14 @@ function openSettings() {
 //ADD DEADLINE BUTTON
 function openAddDeadline() {
     console.log("open add deadlines function running");
-    datePicker.show(options, onSuccess, onError);
-	//$.mobile.navigate( "#addDeadlinePage" ); //open add deadline page
+    $.mobile.navigate( "#addDeadlinePage" ); //open add deadline page
 }
 
+//ADD DATE BUTTON
+function openAddDeadline() {
+    console.log("open add date function running");
+    datePicker.show(options, onSuccess, onError);
+}
 
 //SAVE
 

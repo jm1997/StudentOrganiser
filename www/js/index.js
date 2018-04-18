@@ -1,13 +1,29 @@
 document.addEventListener("deviceready", function() {
-    
+    console.log("enhance panel");
     $('#mypanel').enhanceWithin().panel();
+    
     
     //OPEN MENU WITH SWIPE
     $('body').on('swiperight', function () {
+        console.log("open panel with swipe");
     $('#mypanel').panel('open', '');
     });
     
 });
+
+var options = {
+    date: new Date(),
+    mode: 'date'
+};
+ 
+function onSuccess(date) {
+    alert('Selected date: ' + date);
+}
+ 
+function onError(error) { // Android only 
+    alert('Error: ' + error);
+}
+ 
 
 $(document).on("pagecreate",function(){
     
@@ -80,7 +96,8 @@ function openSettings() {
 //ADD DEADLINE BUTTON
 function openAddDeadline() {
     console.log("open add deadlines function running");
-	$.mobile.navigate( "#addDeadlinePage" ); //open add deadline page
+    datePicker.show(options, onSuccess, onError);
+	//$.mobile.navigate( "#addDeadlinePage" ); //open add deadline page
 }
 
 

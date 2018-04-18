@@ -1,18 +1,17 @@
-document.addEventListener("deviceready", function(){
+document.addEventListener("deviceready", function() {
+    
     $('#mypanel').enhanceWithin().panel();
     
     //OPEN MENU WITH SWIPE
-$('body').on('swiperight', function () {
+    $('body').on('swiperight', function () {
     $('#mypanel').panel('open', '');
-});
-});
-
-
-
-
-
-$(document).on("pagecreate","#homePage",function(){
+    });
     
+});
+
+$(document).on("pagecreate",function(){
+    
+    console.log("page created");
     
     //HOME BUTTON
     $('#homeButton').on("click", function(){ //run openHome function when home button is clicked
@@ -56,26 +55,31 @@ $(document).on("pagecreate","#homePage",function(){
 
 //HOME BUTTON
 function openHome() {
+    console.log("open home function running");
 	$.mobile.navigate( "#homePage" ); //open home page
 }
 
 //DEADLINE BUTTON
 function openDeadlines() {
+    console.log("open deadlines function running");
 	$.mobile.navigate( "#deadlinePage" ); //open deadline page
 }
 
 //TIMETABLE BUTTON
 function openTimetable() {
+    console.log("open timetable function running");
 	$.mobile.navigate( "#timetablePage" ); //open timetable page
 }
 
 //SETTINGS BUTTON
 function openSettings() {
+    console.log("open settings function running");
 	$.mobile.navigate( "#settingsPage" ); //open settings page
 }
 
 //ADD DEADLINE BUTTON
 function openAddDeadline() {
+    console.log("open add deadlines function running");
 	$.mobile.navigate( "#addDeadlinePage" ); //open add deadline page
 }
 
@@ -84,5 +88,6 @@ function openAddDeadline() {
 
 //CANCEL
 function cancel() {
+    console.log("cancel function running");
 	$.mobile.navigate( "#deadlinePage" ); //return to deadline page
 }

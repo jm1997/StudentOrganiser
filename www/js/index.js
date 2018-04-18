@@ -104,7 +104,7 @@ function openAddDeadline() {
 }
 
 //ADD DATE BUTTON
-function openAddDeadline() {
+function addDate() {
     console.log("open add date function running");
     datePicker.show(options, onSuccess, onError);
 }

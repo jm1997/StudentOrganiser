@@ -15,6 +15,8 @@ document.addEventListener("deviceready", function () {
 var options = {
     date: new Date(),
     mode: 'datetime'
+    allowOldDates: false, //prevents adding a date in the past
+    allowFutureDates: true,
 };
  
 function onSuccess(date) {

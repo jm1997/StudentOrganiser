@@ -1,4 +1,4 @@
-document.addEventListener("deviceready", function() {
+document.addEventListener("deviceready", function () {
     console.log("enhance panel");
     $('#mypanel').enhanceWithin().panel();
     
@@ -25,17 +25,17 @@ function onError(error) { // Android only
 }
  
 
-$(document).on("pagecreate",function(){
+$(document).on("pagecreate", function () {
     
     console.log("page created");
     
     //HOME BUTTON
-    $('#homeButton').on("click", function(){ //run openHome function when home button is clicked
+    $('#homeButton').on("click", function () { //run openHome function when home button is clicked
     openHome();
     });  
    
     //DEADLINE BUTTON
-    $('#deadlineButton').on("click", function(){ //run openDeadlines function when deadline button is clicked
+    $('#deadlineButton').on("click", function () { //run openDeadlines function when deadline button is clicked
     openDeadlines();
     }); 
     
@@ -70,8 +70,6 @@ $(document).on("pagecreate",function(){
     }); 
     
 });  
-
-
 
 //HOME BUTTON
 function openHome() {

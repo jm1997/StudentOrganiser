@@ -137,7 +137,25 @@
             <h2 align="center">Add a Deadline</h2>
 
             <ul style="list-style-type:none">
-                <li><button id="dateButton" data-icon="plus">Add Date</button></li>
+                
+                <!-- deadline name entry -->
+                <li>
+                <div data-role="fieldcontain">
+                    <label for="deadlineName">Deadline Name:</label>
+                    <input type="text" name="deadlineName" id="deadlineName" value=""  />
+                </div>	
+                </li>
+                
+                <!-- deadline date entry -->
+                <li>
+                <div>   
+                    <label for="deadlineDate">Deadline Date:</label>
+                    <button id="dateButton" name="deadlineDate" data-icon="plus">Add Date</button>
+                </div>
+                </li>
+                
+                <br><br><br>
+                
                 <li><button id="saveButton" data-icon="check">Save</button></li>
                 <li><button id="cancelButton" data-icon="delete">Cancel</button></li>
             </ul>

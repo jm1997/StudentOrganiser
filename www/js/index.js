@@ -11,9 +11,10 @@ document.addEventListener("deviceready", function () {
     
 });
 
+//create new variable called options
 var options = {
     date: new Date(),
-    mode: 'date'
+    mode: 'datetime'
 };
  
 function onSuccess(date) {
@@ -23,6 +24,27 @@ function onSuccess(date) {
 function onError(error) { // Android only 
     alert('Error: ' + error);
 }
+
+
+function loadDeadlines() {
+            $('#name1').val(localStorage.name1);
+            $('#date1').val(localStorage.date1);
+            $('#name2').val(localStorage.name2);
+            $('#date2').val(localStorage.date2);
+        
+        }
+
+function saveDeadlines() {
+            var name1 = document.getElementById("name1").value;
+            var date1 = document.getElementById("date1").value;
+            var name2 = document.getElementById("name2").value;
+            var date2 = document.getElementById("date2").val();
+
+            localStorage.name1 = name1;
+            localStorage.date1 = date1;
+            localStorage.name2 = name2;
+            localStorage.date2 = date2;
+        }
  
 
 $(document).on("pagecreate", function () {

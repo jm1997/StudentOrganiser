@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-    
+
 <head>
 
-<link rel="stylesheet" type="text/css" href="stylesheet.css">   
-    
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
 <!-- -->
-    
+
     <title>Student Organisation App</title>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
@@ -14,96 +14,110 @@
     <script src="jquery-mobile/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
     <script src="js/index.js"type="text/javascript" charset="utf-8"></script>
 	<link href="jquery-mobile/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
-		
+
 </head>
 
 <body>
-  
-<!-- PAGE BREAK -->    
-<!-- PAGE BREAK -->      
-<!-- PAGE BREAK -->        
-       
+
+<!-- PAGE BREAK -->
+<!-- PAGE BREAK -->
+<!-- PAGE BREAK -->
+
   <!-- HOME PAGE -->
- 
-  <div data-role="page" id="homePage"> <!-- home page -->     
-           
-       <!-- HEADER BAR -->  
+
+  <div data-role="page" id="homePage"> <!-- home page -->
+
+       <!-- HEADER BAR -->
 	   <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
 		  <h1>S.O.S</h1>
            <a href="#mypanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-ajax="false">Menu</a>
 	   </div>
-      
+
         <!-- PAGE CONTENT -->
         <div data-role="main" class="ui-content">
             <h2 align="center">Welcome to S.O.S - Student Organisational System</h2>
         </div>
-      
-       <!-- FOOTER BAR -->  
+
+       <!-- FOOTER BAR -->
 	   <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
 		  <h1>Sample Footer Text</h1>
-	   </div> 
-  
+	   </div>
+
 	</div> <!-- close home page -->
 
-<!-- PAGE BREAK -->    
-<!-- PAGE BREAK -->      
-<!-- PAGE BREAK -->        
-    
+<!-- PAGE BREAK -->
+<!-- PAGE BREAK -->
+<!-- PAGE BREAK -->
+
     <!-- TIMETABLE PAGE -->
-    
+
 	<div data-role="page" id="timetablePage">
-      
-       <!-- HEADER BAR -->  
+
+       <!-- HEADER BAR -->
        <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
-           <h1>S.O.S</h1>
+           <h1>S.O.S - Timetable </h1>
            <a href="#mypanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-ajax="false">Menu</a>
        </div>
 
        <div data-role="main" class="ui-content">
            <h2 align="center">timetable page</h2>
        </div>
-        
-       <!-- FOOTER BAR -->  
+
+       <!-- FOOTER BAR -->
        <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
             <h1>Sample Footer Text</h1>
        </div>
-        
+
 </div> <!-- close timetable page -->
-    
-<!-- PAGE BREAK -->  
-<!-- PAGE BREAK -->      
-<!-- PAGE BREAK -->      
-       
+
+<!-- PAGE BREAK -->
+<!-- PAGE BREAK -->
+<!-- PAGE BREAK -->
+
     <!-- DEADLINE PAGE -->
     <div data-role="page" id="deadlinePage">
-        
-        <!-- HEADER BAR --> 
+
+        <!-- HEADER BAR -->
         <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
-            <h1>S.O.S</h1>
+            <h1>S.O.S - Deadlines </h1>
             <a href="#mypanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-ajax="false">Menu</a>
             <button id="addDeadlineButton" data-icon="plus"></button>
         </div>
 
         <div data-role="main" class="ui-content">
             <h2 align="center">Deadline Page</h2>
-            
+
+            <table>
+              <tr>
+                <td>1 </td>
+                <td>Deadline name + countdown</td>
+                <td><button>Edit</button></td>
+              </tr>
+              <tr>
+                <td>2 </td>
+              </tr>
+              <tr>
+                <td>3 </td>
+              </tr>
+            </table>
+
         </div>
-        
-        <!-- FOOTER BAR --> 
+
+        <!-- FOOTER BAR -->
         <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
             <h1>Sample Footer Text</h1>
         </div>
-        
+
     </div> <!-- close deadline page -->
 
-<!-- PAGE BREAK -->  
-<!-- PAGE BREAK -->      
-<!-- PAGE BREAK -->      
-       
+<!-- PAGE BREAK -->
+<!-- PAGE BREAK -->
+<!-- PAGE BREAK -->
+
     <!-- SETTINGS PAGE -->
     <div data-role="page" id="settingsPage">
 
-        <!-- HEADER BAR --> 
+        <!-- HEADER BAR -->
         <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
             <h1>S.O.S</h1>
             <a href="#mypanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-ajax="false">Menu</a>
@@ -112,72 +126,72 @@
         <div data-role="main" class="ui-content">
             <h2 align="center">Settings Page</h2>
         </div>
-        
-        <!-- FOOTER BAR --> 
+
+        <!-- FOOTER BAR -->
         <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
             <h1>Sample Footer Text</h1>
         </div>
-        
+
     </div> <!-- close settings page -->
-    
-<!-- PAGE BREAK -->  
-<!-- PAGE BREAK -->      
-<!-- PAGE BREAK -->      
-       
+
+<!-- PAGE BREAK -->
+<!-- PAGE BREAK -->
+<!-- PAGE BREAK -->
+
     <!-- ADD DEADLINE PAGE -->
     <div data-role="page" id="addDeadlinePage">
 
-        <!-- HEADER BAR --> 
+        <!-- HEADER BAR -->
         <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
             <h1>S.O.S</h1>
         </div>
 
         <div data-role="main" class="ui-content">
-            
+
             <h2 align="center">Add a Deadline</h2>
 
             <ul style="list-style-type:none">
-                
+
                 <!-- deadline name entry -->
                 <li>
                 <div data-role="fieldcontain">
                     <label for="deadlineName">Deadline Name:</label>
                     <input type="text" name="deadlineName" id="deadlineName" value=""  />
-                </div>	
+                </div>
                 </li>
-                
+
                 <!-- deadline date entry -->
                 <li>
-                <div>   
+                <div>
                     <label for="deadlineDate">Deadline Date:</label>
                     <button id="dateButton" name="deadlineDate" data-icon="plus">Add Date</button>
                 </div>
                 </li>
-                
+
                 <br><br><br>
-                
+
                 <li><button id="saveButton" data-icon="check">Save</button></li>
                 <li><button id="cancelButton" data-icon="delete">Cancel</button></li>
             </ul>
-            
+
         </div>
-        
-        <!-- FOOTER BAR --> 
+
+        <!-- FOOTER BAR -->
         <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
             <h1>Sample Footer Text</h1>
         </div>
-        
-    </div> <!-- close add deadline page -->   
-  
-<!-- PAGE BREAK -->  
-<!-- PAGE BREAK -->      
+
+    </div> <!-- close add deadline page -->
+
 <!-- PAGE BREAK -->
-        
+<!-- PAGE BREAK -->
+<!-- PAGE BREAK -->
+
     <!-- EXTERNAL PANEL -->
-    <div data-role="panel" id="mypanel" data-display="push"> 
-            
+    <div data-role="panel" id="mypanel" data-display="push">
+
         <!-- http://demos.jquerymobile.com/1.4.5/panel/ -->
-        <div class="ui-panel-inner">    
+        <div class="ui-panel-inner">
 		<h2>Menu</h2> <br>
 		<p>Click the buttons below to naviagate between pages</p>
                 <!-- links to pages -->

@@ -19,6 +19,9 @@ var options = {
     //allowFutureDates: true,
 };
 
+var deadlines = [];
+
+
 //If datepick opens
 function onSuccess(date) {
     alert('Selected date: ' + date);
@@ -31,23 +34,23 @@ function onError(error) { // Android only
 
 
 function loadDeadlines() {
-            $('#name1').val(localStorage.name1);
-            $('#date1').val(localStorage.date1);
-            $('#name2').val(localStorage.name2);
-            $('#date2').val(localStorage.date2);
+            $('#dname1').val(localStorage.name1);
+            $('#ddate1').val(localStorage.date1);
+            $('#dname2').val(localStorage.name2);
+            $('#ddate2').val(localStorage.date2);
 
         }
 
 function saveDeadlines() {
-            var name1 = document.getElementById("name1").value;
-            var date1 = document.getElementById("date1").value;
-            var name2 = document.getElementById("name2").value;
-            var date2 = document.getElementById("date2").val();
+            var dname1 = document.getElementById("dname1").value;
+            var ddate1 = document.getElementById("ddate1").value;
+            var dname2 = document.getElementById("dname2").value;
+            var ddate2 = document.getElementById("ddate2").val();
 
-            localStorage.name1 = name1;
-            localStorage.date1 = date1;
-            localStorage.name2 = name2;
-            localStorage.date2 = date2;
+            localStorage.dname1 = dname1;
+            localStorage.ddate1 = ddate1;
+            localStorage.dname2 = dname2;
+            localStorage.ddate2 = ddate2;
         }
 
 
@@ -135,9 +138,13 @@ function addDate() {
 }
 
 //SAVE
+function save () {
+  console.log("save function running");
+  deadlines.append(dname1, ddate1);
+}
 
 //CANCEL
 function cancel() {
-    console.log("cancel function running");
+  console.log("cancel function running");
 	$.mobile.navigate( "#deadlinePage" ); //return to deadline page
 }

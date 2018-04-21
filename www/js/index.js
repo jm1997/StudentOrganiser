@@ -168,15 +168,17 @@ function save () {
   deadline.push({
     deadlineName: deadlineName.value
   });
-
+/* //coment out  date picker so i can debug in chrome
   deadline.push({
     key: "deadlineDate",
     value: deadlineDate.value
   });
-
+*/
   //add to array
   deadlines.push(deadline);
   console.log(deadlines);
+
+  $.mobile.navigate( "#deadlinePage" ); //open deadline page
 }
 
 //CANCEL

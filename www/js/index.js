@@ -139,8 +139,17 @@ function addDate() {
 
 //SAVE
 function save () {
+  
   console.log("save function running");
-  deadlines.append(dname1, ddate1);
+  var deadline = [];
+
+  deadline.push({
+    key: "title",
+    value: deadlineName.value
+  });
+
+  //add to array
+  deadlines.append(deadline);
 }
 
 //CANCEL

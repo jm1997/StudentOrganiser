@@ -15,8 +15,8 @@ document.addEventListener("deviceready", function () {
 var options = {
     date: new Date(), //sets value of date to current date
     mode: 'datetime'
-    allowOldDates: false, //prevents adding a date in the past
-    allowFutureDates: true,
+    //allowOldDates: false, //prevents adding a date in the past
+    //allowFutureDates: true,
 };
 
 //If datepick opens

@@ -33,7 +33,7 @@ function onError(error) { // Android only
 }
 
 
-function loadDeadlines() {
+/*function loadDeadlines() {
             $('#dname1').val(localStorage.name1);
             $('#ddate1').val(localStorage.date1);
             $('#dname2').val(localStorage.name2);
@@ -52,7 +52,7 @@ function saveDeadlines() {
             localStorage.dname2 = dname2;
             localStorage.ddate2 = ddate2;
         }
-
+*/
 
 $(document).on("pagecreate", function () {
 
@@ -110,6 +110,25 @@ function openHome() {
 function openDeadlines() {
     console.log("open deadlines function running");
 	$.mobile.navigate( "#deadlinePage" ); //open deadline page
+
+  deadlines.forEach(addToArray)
+}
+
+function addToArray(item) {
+  deadlineTable = document.getElementById("deadlineList")
+
+  var deleteButton = document.createElement("BUTTON");
+  var deleteButtonText = document.createTextNode("Delete");
+  deleteButton.appendChild(deleteButtonText);
+
+  var row = deadlineTable.insertRow(0);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  cell1.innerHTML = item[0].deadlineName;
+  cell2.innerHTML = item[0].deadlineDate;
+  cell3.appendChild(deleteButton);
+
 }
 
 //TIMETABLE BUTTON
@@ -128,6 +147,8 @@ function openSettings() {
 function openAddDeadline() {
     console.log("open add deadlines function running");
     $.mobile.navigate( "#addDeadlinePage" ); //open add deadline page
+
+
 }
 
 //ADD DATE BUTTON
@@ -139,17 +160,23 @@ function addDate() {
 
 //SAVE
 function save () {
-  
+
   console.log("save function running");
-  var deadline = [];
+
+  var deadline = []; //creates array
 
   deadline.push({
-    key: "title",
-    value: deadlineName.value
+    deadlineName: deadlineName.value
+  });
+
+  deadline.push({
+    key: "deadlineDate",
+    value: deadlineDate.value
   });
 
   //add to array
-  deadlines.append(deadline);
+  deadlines.push(deadline);
+  console.log(deadlines);
 }
 
 //CANCEL

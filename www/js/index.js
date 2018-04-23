@@ -15,24 +15,24 @@ document.addEventListener("deviceready", function () {
 var options = {
     date: new Date(), //sets value of date to current date
     mode: 'datetime'
-    //allowOldDates: false, //prevents adding a date in the past
-    //allowFutureDates: true,
+    //allowOldDates: false, //prevents adding a date in the past FOR SOME REASON THIS LINE BREAKS EVERYTHING :(
 };
 
+//create deadlines array
 var deadlines = [];
 
 
-//If datepick opens
+//If datepick plugin opens
 function onSuccess(date) {
     alert('Selected date: ' + date);
 }
 
-//if datepicker fails
+//if datepicker plugin fails
 function onError(error) { // Android only
     alert('Error: ' + error);
 }
 
-
+//this is all taken from stack overflow
 /*function loadDeadlines() {
             $('#dname1').val(localStorage.name1);
             $('#ddate1').val(localStorage.date1);
@@ -54,6 +54,7 @@ function saveDeadlines() {
         }
 */
 
+//this runs everytime any page is created
 $(document).on("pagecreate", function () {
 
     console.log("page created");
@@ -103,22 +104,29 @@ $(document).on("pagecreate", function () {
 //HOME BUTTON
 function openHome() {
     console.log("open home function running");
-	$.mobile.navigate( "#homePage" ); //open home page
+	$.mobile.navigate("#homePage"); //open home page
 }
 
 //DEADLINE BUTTON
 function openDeadlines() {
     console.log("open deadlines function running");
-	$.mobile.navigate( "#deadlinePage" ); //open deadline page
+    
+    //run add to array function for each item in deadlines array
+    deadlines.forEach(addToArray)
+    
+	$.mobile.navigate("#deadlinePage"); //open deadline page
 
-  deadlines.forEach(addToArray)
+  
 }
 
 function addToArray(item) {
   deadlineTable = document.getElementById("deadlineList")
-
+    
+    //create delete button
   var deleteButton = document.createElement("BUTTON");
+    //create text for button
   var deleteButtonText = document.createTextNode("Delete");
+    //add text to button
   deleteButton.appendChild(deleteButtonText);
 
   var row = deadlineTable.insertRow(0);
@@ -162,23 +170,30 @@ function addDate() {
 function save () {
 
   console.log("save function running");
-
-  var deadline = []; //creates array
-
+    
+  //creates array called deadline  
+  var deadline = []; 
+    
+    //add deadline name to deadline array
   deadline.push({
     deadlineName: deadlineName.value
   });
-/* //coment out  date picker so i can debug in chrome
+    
+/* COMMENTED OUT SO I CAN DEBUG IN CHROME
   deadline.push({
     key: "deadlineDate",
     value: deadlineDate.value
   });
 */
-  //add to array
+    
+  //add all info to daedlines array
   deadlines.push(deadline);
+  //print deadlines array to console  
   console.log(deadlines);
+  
+  //open deadline page
+  $.mobile.navigate( "#deadlinePage" ); 
 
-  $.mobile.navigate( "#deadlinePage" ); //open deadline page
 }
 
 //CANCEL

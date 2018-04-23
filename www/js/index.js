@@ -186,17 +186,18 @@ function save () {
   });
 */
     
-  //add all info to daedlines array
+  //add all info to deadlines array
   deadlines.push(deadline);
+    
   //print deadlines array to console  
   console.log(deadlines);
   
   //open deadline page
-  $.mobile.navigate( "#deadlinePage" ); 
+  //$.mobile.navigate( "#deadlinePage" ); 
 
 }
 
-//CANCEL
+//CANCEL 
 function cancel() {
   console.log("cancel function running");
 	$.mobile.navigate( "#deadlinePage" ); //return to deadline page

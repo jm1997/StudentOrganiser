@@ -55,7 +55,7 @@ $(document).on("pagecreate", function () {
     $('#timetableButton').on("click", function(){
     openTimetable();
     });
-    
+
     //ADD TIMETABLE BUTTON
     $('#addTimetableButton').on("click", function(){
     openAddTimetable();
@@ -80,7 +80,7 @@ $(document).on("pagecreate", function () {
     $('#dateButton').on("click", function(){
     addDate();
     });
-    
+
     //SAVE BUTTON
     $('#saveButtonTimetable').on("click", function(){
     saveTT();
@@ -102,28 +102,28 @@ function openHome() {
 //DEADLINE BUTTON
 function openDeadlines() {
     console.log("open deadlines function running");
-    
+
 	$.mobile.navigate("#deadlinePage"); //open deadline page
-    
+
     //empty table
-    deadlineList.innerHTML="" 
+    deadlineList.innerHTML=""
     //run add to array function for each item in deadlines array
-    deadlines.forEach(addToArray) 
-  
+    deadlines.forEach(addToArray)
+
 }
 //DEADLINE ARRAY
 function addToArray(item) {
     //select element with ID of deadlineList
   deadlineTable = document.getElementById("deadlineList")
-    
+
     //create delete button
   var deleteButton = document.createElement("BUTTON");
     //create text for button
   var deleteButtonText = document.createTextNode("Delete");
     //add text to button
   deleteButton.appendChild(deleteButtonText);
-    
-    
+
+
     function deleteRow() {
         //selects a row number
         var rowIndex = this.parentElement.parentElement.rowIndex;
@@ -132,7 +132,7 @@ function addToArray(item) {
         //removes from table row
         this.parentElement.parentElement.remove();
     }
-    
+
     //when delete button clicked does above function
     deleteButton.onclick=deleteRow;
 
@@ -179,35 +179,35 @@ function addDate() {
 function save () {
 
   console.log("save function running");
-    
-  //creates array called deadline  
-  var deadline = []; 
-    
+
+  //creates array called deadline
+  var deadline = [];
+
     //add deadline name to deadline array
   deadline.push({
     deadlineName: deadlineName.value
   });
-   //add deadline date to deadline array 
+   //add deadline date to deadline array
     deadline.push({
     deadlineDate: deadlineDate.value
   });
-    
+
     //run add to array function for each item in deadlines array
     deadlineList.innerHTML=""
     deadlines.forEach(addToArray)
-    
+
   //add all info to deadlines array
   deadlines.push(deadline);
-    
-  //print deadlines array to console  
+
+  //print deadlines array to console
   console.log(deadlines);
-  
+
   //open deadline page
-  $.mobile.navigate( "#deadlinePage" ); 
+  $.mobile.navigate( "#deadlinePage" );
 
 }
 
-//CANCEL 
+//CANCEL
 function cancel() {
   console.log("cancel function running");
 	$.mobile.navigate( "#deadlinePage" ); //return to deadline page
@@ -215,7 +215,17 @@ function cancel() {
 
 //Save timetable
 function saveTT() {
-  console.log("save timetable function running");
+  // gets the selected date value and sets it to lowercase
+  var lectureDay =  dayPicker.options[dayPicker.options.selectedIndex].value.toLowerCase()
+  // gets the name of the lecture
+  var lectureName = document.getElementById("lectureName").value;
+  // gets the time of the lecture
+  var lectureTime = document.getElementById("lectureTime").value;
+  // picks the correct slot by combining the lectureday and lecture time
+  var timetableSlot = document.getElementById(lectureDay + lectureTime);
+  // sets the value of the above slot with the string entered into the lectureName
+  timetableSlot.innerHTML = lectureName;
+
 	$.mobile.navigate( "#timetablePage" ); //return to deadline page
 }
 //CANCEL timetable
@@ -223,4 +233,3 @@ function cancelTT() {
   console.log("cancel timetable function running");
 	$.mobile.navigate( "#timetablePage" ); //return to deadline page
 }
-

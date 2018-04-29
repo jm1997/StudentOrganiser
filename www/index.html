@@ -15,7 +15,7 @@
     <script src="js/index.js"type="text/javascript" charset="utf-8"></script>
 	<link href="jquery-mobile/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
     <link rel="apple-touch-startup-image" href="img/splash.jpg" />
-    
+
 </head>
 
 <body id="mobile">
@@ -62,17 +62,58 @@
        </div>
 
        <div data-role="main" class="ui-content">
-           
+
            <table id="timetableTable">
-               <tr>
-                <th>Monday</th>
+              <tr>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>Monday</th>
                <th>Tuesday</th>
                <th>Wednesday</th>
                <th>Thursday</th>
                <th>Friday</th>
-               </tr>
+              </tr>
+              <tr>
+               <td><strong>9:00</strong></td>
+               <td id="monday9:00"></td>
+               <td id="tuesday9:00"></td>
+               <td id="wednesday9:00"></td>
+               <td id="thursday9:00"></td>
+               <td id="friday9:00"></td>
+              </tr>
+              <tr>
+               <td><strong>11:00</strong></td>
+               <td id="monday11:00"></td>
+               <td id="tuesday11:00"></td>
+               <td id="wednesday11:00"></td>
+               <td id="thursday11:00"></td>
+               <td id="friday11:00"></td>
+              </tr>
+              <tr>
+              <td><strong>13:00</strong></td>
+               <td id="monday13:00"></td>
+               <td id="tuesday13:00"></td>
+               <td id="wednesday13:00"></td>
+               <td id="thursday13:00"></td>
+               <td id="friday13:00"></td>
+              </tr>
+              <tr>
+               <td><strong>15:00</strong></td>
+               <td id="monday15:00"></td>
+               <td id="tuesday15:00"></td>
+               <td id="wednesday15:00"></td>
+               <td id="thursday15:00"></td>
+               <td id="friday15:00"></td>
+              </tr>
+              <tr>
+              <td><strong>17:00</strong></td>
+               <td id="monday17:00"></td>
+               <td id="tuesday17:00"></td>
+               <td id="wednesday17:00"></td>
+               <td id="thursday17:00"></td>
+               <td id="friday17:00"></td>
+              </tr>
             </table>
-           
+
        </div>
 
        <!-- FOOTER BAR -->
@@ -81,7 +122,7 @@
        </div>
 
 </div> <!-- close timetable page -->
-    
+
 <!-- PAGE BREAK -->
 <!-- PAGE BREAK -->
 <!-- PAGE BREAK -->
@@ -99,22 +140,21 @@
             <h2 align="center">Add to Timetable</h2>
 
             <ul style="list-style-type:none">
-                
+
                 <!-- Lecture day entry -->
                 <li>
                     <div data-role="fieldcontain">
                         <label for="lectureDay">Lecture Day</label>
                         <select id="dayPicker">
-                          <option value="Monday">Monday</option>
+                          <option value="Monday" selected="selected">Monday</option>
                           <option value="Tuesday">Tuesday</option>
                           <option value="Wednesday">Wednesday</option>
                           <option value="Thursday">Thursday</option>
                           <option value="Friday">Friday</option>
                         </select>
-                        
+
                     </div>
                 </li>
-                
                 <!-- Lecture name entry -->
                 <li>
                 <div data-role="fieldcontain">
@@ -127,7 +167,13 @@
                 <li>
                     <div data-role="fieldcontain">
                         <label for="lectureTime">Lecture Time: (24 Hr)</label>
-                        <input type="time" name="lectureTime" id="letureTime" value="" placeholder="sdfjsdk" />
+                        <select id="lectureTime">
+                          <option value="9:00" selected="selected">9:00</option>
+                          <option value="11:00">11:00</option>
+                          <option value="13:00">13:00</option>
+                          <option value="15:00">15:00</option>
+                          <option value="17:00">17:00</option>
+                        </select>
                     </div>
                 </li>
 
@@ -243,6 +289,6 @@
                 <button id="settingsButton" data-icon="gear">Settings</button>
         </div>
     </div> <!-- end panel -->
-    
+
 </body>
 </html>

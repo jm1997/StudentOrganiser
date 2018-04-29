@@ -58,10 +58,21 @@
        <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
            <h1>S.O.S - Timetable </h1>
            <a href="#mypanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-ajax="false">Menu</a>
+           <button id="addTimetableButton" data-icon="plus"></button>
        </div>
 
        <div data-role="main" class="ui-content">
-           <h2 align="center">timetable page</h2>
+           
+           <table id="timetableTable">
+               <tr>
+                <th>Monday</th>
+               <th>Tuesday</th>
+               <th>Wednesday</th>
+               <th>Thursday</th>
+               <th>Friday</th>
+               </tr>
+            </table>
+           
        </div>
 
        <!-- FOOTER BAR -->
@@ -70,6 +81,70 @@
        </div>
 
 </div> <!-- close timetable page -->
+    
+<!-- PAGE BREAK -->
+<!-- PAGE BREAK -->
+<!-- PAGE BREAK -->
+
+    <!-- ADD TIMETABLE PAGE -->
+    <div data-role="page" id="addTimetablePage" data-dom-cache="false">
+
+        <!-- HEADER BAR -->
+        <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
+            <h1>S.O.S - Add to Timetable</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+
+            <h2 align="center">Add to Timetable</h2>
+
+            <ul style="list-style-type:none">
+                
+                <!-- Lecture day entry -->
+                <li>
+                    <div data-role="fieldcontain">
+                        <label for="lectureDay">Lecture Day</label>
+                        <select id="dayPicker">
+                          <option value="Monday">Monday</option>
+                          <option value="Tuesday">Tuesday</option>
+                          <option value="Wednesday">Wednesday</option>
+                          <option value="Thursday">Thursday</option>
+                          <option value="Friday">Friday</option>
+                        </select>
+                        
+                    </div>
+                </li>
+                
+                <!-- Lecture name entry -->
+                <li>
+                <div data-role="fieldcontain">
+                    <label for="lectureName">Lecture Name:</label>
+                    <input type="text" name="lectureName" id="lectureName" value="" placeholder="e.g. Seminar" />
+                </div>
+                </li>
+
+                <!-- Lecture time entry -->
+                <li>
+                    <div data-role="fieldcontain">
+                        <label for="lectureTime">Lecture Time: (24 Hr)</label>
+                        <input type="time" name="lectureTime" id="letureTime" value="" placeholder="sdfjsdk" />
+                    </div>
+                </li>
+
+                <br><br><br>
+
+                <li><button id="saveButtonTimetable" data-icon="check">Save</button></li>
+                <li><button id="cancelButtonTimetable" data-icon="delete">Cancel</button></li>
+            </ul>
+
+        </div>
+
+        <!-- FOOTER BAR -->
+        <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
+            <h1>Sample Footer Text</h1>
+        </div>
+
+    </div> <!-- close add deadline page -->
 
 <!-- PAGE BREAK -->
 <!-- PAGE BREAK -->
@@ -105,30 +180,6 @@
 <!-- PAGE BREAK -->
 <!-- PAGE BREAK -->
 
-    <!-- SETTINGS PAGE -->
-    <div data-role="page" id="settingsPage" data-dom-cache="false">
-
-        <!-- HEADER BAR -->
-        <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
-            <h1>S.O.S</h1>
-            <a href="#mypanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-ajax="false">Menu</a>
-        </div>
-
-        <div data-role="main" class="ui-content">
-            <h2 align="center">Settings Page</h2>
-        </div>
-
-        <!-- FOOTER BAR -->
-        <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
-            <h1>Sample Footer Text</h1>
-        </div>
-
-    </div> <!-- close settings page -->
-
-<!-- PAGE BREAK -->
-<!-- PAGE BREAK -->
-<!-- PAGE BREAK -->
-
     <!-- ADD DEADLINE PAGE -->
     <div data-role="page" id="addDeadlinePage" data-dom-cache="false">
 
@@ -154,7 +205,7 @@
                 <!-- deadline date entry -->
                 <li>
                     <div data-role="fieldcontain">
-                        <label for="deadlineName">Deadline Date:</label>
+                        <label for="deadlineDate">Deadline Date:</label>
                         <input type="text" name="deadlineDate" id="deadlineDate" value="" placeholder="YYYY-MM-DD" />
                     </div>
                 </li>

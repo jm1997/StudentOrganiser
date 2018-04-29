@@ -11,26 +11,8 @@ document.addEventListener("deviceready", function () {
 
 });
 
-//create new variable called options
-var options = {
-    date: new Date(), //sets value of date to current date
-    mode: 'datetime'
-    //allowOldDates: false, //prevents adding a date in the past FOR SOME REASON THIS LINE BREAKS EVERYTHING :(
-};
-
 //create deadlines array
 var deadlines = [];
-
-
-//If datepick plugin opens
-function onSuccess(date) {
-    alert('Selected date: ' + date);
-}
-
-//if datepicker plugin fails
-function onError(error) { // Android only
-    alert('Error: ' + error);
-}
 
 //this is all taken from stack overflow
 /*function loadDeadlines() {
@@ -73,10 +55,10 @@ $(document).on("pagecreate", function () {
     $('#timetableButton').on("click", function(){
     openTimetable();
     });
-
-    //SETTINGS BUTTON
-    $('#settingsButton').on("click", function(){
-    openSettings();
+    
+    //ADD TIMETABLE BUTTON
+    $('#addTimetableButton').on("click", function(){
+    openAddTimetable();
     });
 
     //ADD DEADLINE BUTTON
@@ -98,6 +80,16 @@ $(document).on("pagecreate", function () {
     $('#dateButton').on("click", function(){
     addDate();
     });
+    
+    //SAVE BUTTON
+    $('#saveButtonTimetable').on("click", function(){
+    saveTT();
+    });
+
+    //CANCEL BUTTON
+    $('#cancelButtonTimetable').on("click", function(){
+    cancelTT();
+    });
 
 });
 
@@ -112,13 +104,16 @@ function openDeadlines() {
     console.log("open deadlines function running");
     
 	$.mobile.navigate("#deadlinePage"); //open deadline page
+    
+    //empty table
+    deadlineList.innerHTML="" 
     //run add to array function for each item in deadlines array
-    deadlineList.innerHTML=""
-    deadlines.forEach(addToArray)
+    deadlines.forEach(addToArray) 
   
 }
-
+//DEADLINE ARRAY
 function addToArray(item) {
+    //select element with ID of deadlineList
   deadlineTable = document.getElementById("deadlineList")
     
     //create delete button
@@ -128,13 +123,20 @@ function addToArray(item) {
     //add text to button
   deleteButton.appendChild(deleteButtonText);
     
+    
     function deleteRow() {
+        //selects a row number
         var rowIndex = this.parentElement.parentElement.rowIndex;
+        //removes one element from deadlines array at the row number just selected
         deadlines.splice(rowIndex, 1);
+        //removes from table row
         this.parentElement.parentElement.remove();
     }
+    
+    //when delete button clicked does above function
     deleteButton.onclick=deleteRow;
 
+    //create table and cell content
   var row = deadlineTable.insertRow(0);
   var cell1 = row.insertCell(0);
   var cell2 = row.insertCell(1);
@@ -151,17 +153,18 @@ function openTimetable() {
 	$.mobile.navigate( "#timetablePage" ); //open timetable page
 }
 
-//SETTINGS BUTTON
-function openSettings() {
-    console.log("open settings function running");
-	$.mobile.navigate( "#settingsPage" ); //open settings page
-}
-
 //ADD DEADLINE BUTTON
 function openAddDeadline() {
     console.log("open add deadlines function running");
     $.mobile.navigate( "#addDeadlinePage" ); //open add deadline page
 
+
+}
+
+//ADD TIMETBALE BUTTON
+function openAddTimetable() {
+    console.log("open add timetable function running");
+    $.mobile.navigate( "#addTimetablePage" ); //open add timetable page
 
 }
 
@@ -184,7 +187,7 @@ function save () {
   deadline.push({
     deadlineName: deadlineName.value
   });
-    
+   //add deadline date to deadline array 
     deadline.push({
     deadlineDate: deadlineDate.value
   });
@@ -192,13 +195,6 @@ function save () {
     //run add to array function for each item in deadlines array
     deadlineList.innerHTML=""
     deadlines.forEach(addToArray)
-    
-/* COMMENTED OUT SO I CAN DEBUG IN CHROME
-  deadline.push({
-    key: "deadlineDate",
-    value: deadlineDate.value
-  });
-*/
     
   //add all info to deadlines array
   deadlines.push(deadline);
@@ -216,3 +212,15 @@ function cancel() {
   console.log("cancel function running");
 	$.mobile.navigate( "#deadlinePage" ); //return to deadline page
 }
+
+//Save timetable
+function saveTT() {
+  console.log("save timetable function running");
+	$.mobile.navigate( "#timetablePage" ); //return to deadline page
+}
+//CANCEL timetable
+function cancelTT() {
+  console.log("cancel timetable function running");
+	$.mobile.navigate( "#timetablePage" ); //return to deadline page
+}
+

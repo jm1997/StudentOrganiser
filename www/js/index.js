@@ -111,11 +111,10 @@ function openHome() {
 function openDeadlines() {
     console.log("open deadlines function running");
     
-    //run add to array function for each item in deadlines array
-    deadlines.forEach(addToArray)
-    
 	$.mobile.navigate("#deadlinePage"); //open deadline page
-
+    //run add to array function for each item in deadlines array
+    deadlineList.innerHTML=""
+    deadlines.forEach(addToArray)
   
 }
 
@@ -128,13 +127,20 @@ function addToArray(item) {
   var deleteButtonText = document.createTextNode("Delete");
     //add text to button
   deleteButton.appendChild(deleteButtonText);
+    
+    function deleteRow() {
+        var rowIndex = this.parentElement.parentElement.rowIndex;
+        deadlines.splice(rowIndex, 1);
+        this.parentElement.parentElement.remove();
+    }
+    deleteButton.onclick=deleteRow;
 
   var row = deadlineTable.insertRow(0);
   var cell1 = row.insertCell(0);
   var cell2 = row.insertCell(1);
   var cell3 = row.insertCell(2);
   cell1.innerHTML = item[0].deadlineName;
-  cell2.innerHTML = item[0].deadlineDate;
+  cell2.innerHTML = new Date(item[1].deadlineDate);
   cell3.appendChild(deleteButton);
 
 }
@@ -179,6 +185,14 @@ function save () {
     deadlineName: deadlineName.value
   });
     
+    deadline.push({
+    deadlineDate: deadlineDate.value
+  });
+    
+    //run add to array function for each item in deadlines array
+    deadlineList.innerHTML=""
+    deadlines.forEach(addToArray)
+    
 /* COMMENTED OUT SO I CAN DEBUG IN CHROME
   deadline.push({
     key: "deadlineDate",
@@ -193,7 +207,7 @@ function save () {
   console.log(deadlines);
   
   //open deadline page
-  //$.mobile.navigate( "#deadlinePage" ); 
+  $.mobile.navigate( "#deadlinePage" ); 
 
 }
 

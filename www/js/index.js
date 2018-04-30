@@ -221,32 +221,53 @@ function save () {
 
 }
 
+
+
 //CANCEL
 function cancel() {
   console.log("cancel function running");
 	$.mobile.navigate( "#deadlinePage" ); //return to deadline page
 }
 
+/*
+function saveTimetableLocal() {
+            var lectureDay = document.getElementById("lectureDay").value;
+
+            localStorage.lectureDay = lectureDay;
+
+        }
+        
+        */
+
 //Save timetable
 function saveTT() {
   // gets the selected date value and sets it to lowercase
   var lectureDay =  dayPicker.options[dayPicker.options.selectedIndex].value.toLowerCase()
+  
   // gets the name of the lecture
   var lectureName = document.getElementById("lectureName").value;
+    
   // gets the time of the lecture
   var lectureTime = document.getElementById("lectureTime").value;
+    
   // picks the correct slot by combining the lectureday and lecture time
   var timetableSlot = document.getElementById(lectureDay + lectureTime);
+    
   // sets the value of the above slot with the string entered into the lectureName
   timetableSlot.innerHTML = lectureName;
 
+    //saveTimetableLocal();
+    
 	$.mobile.navigate( "#timetablePage" ); //return to deadline page
 }
+
 //CANCEL timetable
 function cancelTT() {
   console.log("cancel timetable function running");
-	$.mobile.navigate( "#timetablePage" ); //return to deadline page
+	$.mobile.navigate( "#timetablePage" ); //return to timetable page
 }
+
+
 
 //this is all taken from stack overflow
 /*function loadDeadlines() {

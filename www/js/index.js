@@ -229,16 +229,6 @@ function cancel() {
 	$.mobile.navigate( "#deadlinePage" ); //return to deadline page
 }
 
-/*
-function saveTimetableLocal() {
-            var lectureDay = document.getElementById("lectureDay").value;
-
-            localStorage.lectureDay = lectureDay;
-
-        }
-        
-        */
-
 //SAVE TIMETABLE
 function saveTT() {
   // gets the selected date value and sets it to lowercase
@@ -260,7 +250,11 @@ function saveTT() {
     localStorage.setItem("lectureName", lectureName);
     localStorage.setItem("lectureDay", lectureDay);
     
-    var mondayTableContents = document.getElementById(timetableMonday).innerHTML;
+    var mondayTableContents = document.getElementById("timetableMonday").innerHTML;
+    
+    localStorage.setItem("localMondayTableStorage", JSON.stringify(mondayTableContents ));
+                         
+    console.log(localStorage.getItem("localMondayTableStorage"));
     
 	$.mobile.navigate( "#timetablePage" ); //return to timetable page
 }

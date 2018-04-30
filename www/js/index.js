@@ -77,6 +77,8 @@ $(document).on("pagecreate", "#timetablePage", function () {
     
     console.log("timetable page created");
     
+    document.getElementById("timetableMonday").innerHTML = localStorage.getItem("localMondayTableStorage");
+    
     //ADD TIMETABLE BUTTON
     $('#addTimetableButton').on("click", function(){
     console.log("button clicked");
@@ -85,12 +87,12 @@ $(document).on("pagecreate", "#timetablePage", function () {
 
 })   
 
-//this runs everytime timetable page is created
+//this runs everytime add timetable page is created
 $(document).on("pagecreate", "#addTimetablePage", function () {
     
     console.log("add timetable page created");
     
-    document.getElementById("timetableMonday").innerHTML = localStorage.getItem("localMondayTableStorage");
+   
 
     //SAVE BUTTON
     $('#saveButtonTimetable').on("click", function(){

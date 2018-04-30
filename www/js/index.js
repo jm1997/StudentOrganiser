@@ -43,74 +43,89 @@ $(document).on("pagecreate", function () {
 
     //HOME BUTTON
     $('#homeButton').on("click", function () { //run openHome function when home button is clicked
+    console.log("button clicked");
     openHome();
     });
 
     //DEADLINE BUTTON
     $('#deadlineButton').on("click", function () { //run openDeadlines function when deadline button is clicked
+    console.log("button clicked");
     openDeadlines();
     });
 
     //TIMETABLE BUTTON
     $('#timetableButton').on("click", function(){
+    console.log("button clicked");
     openTimetable();
     });
 
-    //ADD TIMETABLE BUTTON
-    $('#addTimetableButton').on("click", function(){
-    openAddTimetable();
-    });
+});
+
+
+//this runs everytime deadline page is created
+$(document).on("pagecreate", "#deadlinePage", function () {
+    
+    console.log("deadline page created");
 
     //ADD DEADLINE BUTTON
     $('#addDeadlineButton').on("click", function(){
+    console.log("button clicked");
     openAddDeadline();
     });
+    
+})
+
+//this runs everytime add deadline page is created
+$(document).on("pagecreate", "#addDeadlinePage", function () {
+    
+    console.log("add deadline page created");
 
     //SAVE BUTTON
     $('#saveButton').on("click", function(){
+    console.log("button clicked");
     save();
     });
 
     //CANCEL BUTTON
     $('#cancelButton').on("click", function(){
+    console.log("button clicked");
     cancel();
     });
-
-    //DATE BUTTON
-    $('#dateButton').on("click", function(){
-    addDate();
+    
+})
+               
+//this runs everytime timetable page is created
+$(document).on("pagecreate", "#timetablePage", function () {
+    
+    console.log("timetable page created");
+    
+    //ADD TIMETABLE BUTTON
+    $('#addTimetableButton').on("click", function(){
+    console.log("button clicked");
+    openAddTimetable();
     });
+
+})   
+
+//this runs everytime timetable page is created
+$(document).on("pagecreate", "#addTimetablePage", function () {
+    
+    console.log("add timetable page created");
 
     //SAVE BUTTON
     $('#saveButtonTimetable').on("click", function(){
+    console.log("button clicked");
     saveTT();
     });
 
     //CANCEL BUTTON
     $('#cancelButtonTimetable').on("click", function(){
+    console.log("button clicked");
     cancelTT();
     });
 
-});
-
-//HOME BUTTON
-function openHome() {
-    console.log("open home function running");
-	$.mobile.navigate("#homePage"); //open home page
-}
-
-//DEADLINE BUTTON
-function openDeadlines() {
-    console.log("open deadlines function running");
-
-	$.mobile.navigate("#deadlinePage"); //open deadline page
-
-    //empty table
-    deadlineList.innerHTML=""
-    //run add to array function for each item in deadlines array
-    deadlines.forEach(addToArray)
-
-}
+}) 
+               
 //DEADLINE ARRAY
 function addToArray(item) {
     //select element with ID of deadlineList
@@ -131,6 +146,8 @@ function addToArray(item) {
         deadlines.splice(rowIndex, 1);
         //removes from table row
         this.parentElement.parentElement.remove();
+        
+        console.log("deadline deleted");
     }
 
     //when delete button clicked does above function
@@ -144,6 +161,25 @@ function addToArray(item) {
   cell1.innerHTML = item[0].deadlineName;
   cell2.innerHTML = new Date(item[1].deadlineDate);
   cell3.appendChild(deleteButton);
+
+}
+
+//HOME BUTTON
+function openHome() {
+    console.log("open home function running");
+	$.mobile.navigate("#homePage"); //open home page
+}
+
+//DEADLINE BUTTON
+function openDeadlines() {
+    console.log("open deadlines function running");
+
+	$.mobile.navigate("#deadlinePage"); //open deadline page
+
+    //empty table
+    deadlineList.innerHTML=""
+    //run add to array function for each item in deadlines array
+    deadlines.forEach(addToArray)
 
 }
 

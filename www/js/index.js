@@ -189,7 +189,7 @@ function addDate() {
     $.mobile.navigate( "#addDeadlinePage" ); //open add deadline page
 }
 
-//SAVE
+//SAVE DEADLINES
 function save () {
 
   console.log("save function running");
@@ -239,7 +239,7 @@ function saveTimetableLocal() {
         
         */
 
-//Save timetable
+//SAVE TIMETABLE
 function saveTT() {
   // gets the selected date value and sets it to lowercase
   var lectureDay =  dayPicker.options[dayPicker.options.selectedIndex].value.toLowerCase()
@@ -257,11 +257,12 @@ function saveTT() {
   timetableSlot.innerHTML = lectureName;
 
     //saveTimetableLocal();
-    
     localStorage.setItem("lectureName", lectureName);
     localStorage.setItem("lectureDay", lectureDay);
     
-	$.mobile.navigate( "#timetablePage" ); //return to timetab page
+    var mondayTableContents = document.getElementById(timetableMonday).innerHTML;
+    
+	$.mobile.navigate( "#timetablePage" ); //return to timetable page
 }
 
 //CANCEL timetable
@@ -269,26 +270,3 @@ function cancelTT() {
   console.log("cancel timetable function running");
 	$.mobile.navigate( "#timetablePage" ); //return to timetable page
 }
-
-
-
-//this is all taken from stack overflow
-/*function loadDeadlines() {
-            $('#dname1').val(localStorage.name1);
-            $('#ddate1').val(localStorage.date1);
-            $('#dname2').val(localStorage.name2);
-            $('#ddate2').val(localStorage.date2);
-
-        }
-function saveDeadlines() {
-            var dname1 = document.getElementById("dname1").value;
-            var ddate1 = document.getElementById("ddate1").value;
-            var dname2 = document.getElementById("dname2").value;
-            var ddate2 = document.getElementById("ddate2").val();
-
-            localStorage.dname1 = dname1;
-            localStorage.ddate1 = ddate1;
-            localStorage.dname2 = dname2;
-            localStorage.ddate2 = ddate2;
-        }
-*/

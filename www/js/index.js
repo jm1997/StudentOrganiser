@@ -89,6 +89,8 @@ $(document).on("pagecreate", "#timetablePage", function () {
 $(document).on("pagecreate", "#addTimetablePage", function () {
     
     console.log("add timetable page created");
+    
+    document.getElementById("timetableMonday").innerHTML = localStorage.getItem("localMondayTableStorage");
 
     //SAVE BUTTON
     $('#saveButtonTimetable').on("click", function(){
@@ -164,6 +166,7 @@ function openDeadlines() {
 //TIMETABLE BUTTON
 function openTimetable() {
     console.log("open timetable function running");
+    
 	$.mobile.navigate( "#timetablePage" ); //open timetable page
 }
 
@@ -220,8 +223,6 @@ function save () {
   $.mobile.navigate( "#deadlinePage" );
 
 }
-
-
 
 //CANCEL
 function cancel() {

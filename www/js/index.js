@@ -42,7 +42,7 @@ $(document).on("pagecreate", function () {
 
 //this runs everytime deadline page is created
 $(document).on("pagecreate", "#deadlinePage", function () {
-    
+
     console.log("deadline page created");
 
     //ADD DEADLINE BUTTON
@@ -50,12 +50,12 @@ $(document).on("pagecreate", "#deadlinePage", function () {
     console.log("button clicked");
     openAddDeadline();
     });
-    
+
 })
 
 //this runs everytime add deadline page is created
 $(document).on("pagecreate", "#addDeadlinePage", function () {
-    
+
     console.log("add deadline page created");
 
     //SAVE BUTTON
@@ -69,30 +69,32 @@ $(document).on("pagecreate", "#addDeadlinePage", function () {
     console.log("button clicked");
     cancel();
     });
-    
+
 })
-               
+
 //this runs everytime timetable page is created
 $(document).on("pagecreate", "#timetablePage", function () {
-    
+
     console.log("timetable page created");
-    
-    document.getElementById("timetableMonday").innerHTML = localStorage.getItem("localMondayTableStorage");
-    
+
+    if (localStorage.getItem("localMondayTableStorage") != null) {
+      document.getElementById("timetableMonday").innerHTML = localStorage.getItem("localMondayTableStorage");
+    }
+
     //ADD TIMETABLE BUTTON
     $('#addTimetableButton').on("click", function(){
     console.log("button clicked");
     openAddTimetable();
     });
 
-})   
+})
 
 //this runs everytime add timetable page is created
 $(document).on("pagecreate", "#addTimetablePage", function () {
-    
+
     console.log("add timetable page created");
-    
-   
+
+
 
     //SAVE BUTTON
     $('#saveButtonTimetable').on("click", function(){
@@ -106,8 +108,8 @@ $(document).on("pagecreate", "#addTimetablePage", function () {
     cancelTT();
     });
 
-}) 
-               
+})
+
 //DEADLINE ARRAY
 function addToArray(item) {
     //select element with ID of deadlineList
@@ -128,7 +130,7 @@ function addToArray(item) {
         deadlines.splice(rowIndex, 1);
         //removes from table row
         this.parentElement.parentElement.remove();
-        
+
         console.log("deadline deleted");
     }
 
@@ -168,7 +170,7 @@ function openDeadlines() {
 //TIMETABLE BUTTON
 function openTimetable() {
     console.log("open timetable function running");
-    
+
 	$.mobile.navigate( "#timetablePage" ); //open timetable page
 }
 
@@ -236,29 +238,26 @@ function cancel() {
 function saveTT() {
   // gets the selected date value and sets it to lowercase
   var lectureDay =  dayPicker.options[dayPicker.options.selectedIndex].value.toLowerCase()
-  
+
   // gets the name of the lecture
   var lectureName = document.getElementById("lectureName").value;
-    
+
   // gets the time of the lecture
   var lectureTime = document.getElementById("lectureTime").value;
-    
+
   // picks the correct slot by combining the lectureday and lecture time
   var timetableSlot = document.getElementById(lectureDay + lectureTime);
-    
+
   // sets the value of the above slot with the string entered into the lectureName
   timetableSlot.innerHTML = lectureName;
 
-    //saveTimetableLocal();
-    localStorage.setItem("lectureName", lectureName);
-    localStorage.setItem("lectureDay", lectureDay);
-    
-    var mondayTableContents = document.getElementById("timetableMonday").innerHTML;
-    
-    localStorage.setItem("localMondayTableStorage", JSON.stringify(mondayTableContents ));
-                         
+
+    var mondayTableContents = JSON.stringify(document.getElementById("timetableMonday").innerHTML).replace(/\\n/g, "").replace(/\\"/g, "").replace(/\"/g, "");
+
+    localStorage.setItem("localMondayTableStorage", mondayTableContents);
+
     console.log(localStorage.getItem("localMondayTableStorage"));
-    
+
 	$.mobile.navigate( "#timetablePage" ); //return to timetable page
 }
 

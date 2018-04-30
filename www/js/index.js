@@ -258,10 +258,10 @@ function saveTT() {
 
     //saveTimetableLocal();
     
-    localStorage.setItem("lectureName", "");
-    localStorage.setItem("lectureDay", "");
+    localStorage.setItem("lectureName", lectureName);
+    localStorage.setItem("lectureDay", lectureDay);
     
-	$.mobile.navigate( "#timetablePage" ); //return to timetable page
+	$.mobile.navigate( "#timetablePage" ); //return to timetab page
 }
 
 //CANCEL timetable

@@ -14,28 +14,6 @@ document.addEventListener("deviceready", function () {
 //create deadlines array
 var deadlines = [];
 
-//this is all taken from stack overflow
-/*function loadDeadlines() {
-            $('#dname1').val(localStorage.name1);
-            $('#ddate1').val(localStorage.date1);
-            $('#dname2').val(localStorage.name2);
-            $('#ddate2').val(localStorage.date2);
-
-        }
-
-function saveDeadlines() {
-            var dname1 = document.getElementById("dname1").value;
-            var ddate1 = document.getElementById("ddate1").value;
-            var dname2 = document.getElementById("dname2").value;
-            var ddate2 = document.getElementById("ddate2").val();
-
-            localStorage.dname1 = dname1;
-            localStorage.ddate1 = ddate1;
-            localStorage.dname2 = dname2;
-            localStorage.ddate2 = ddate2;
-        }
-*/
-
 //this runs everytime any page is created
 $(document).on("pagecreate", function () {
 
@@ -269,3 +247,24 @@ function cancelTT() {
   console.log("cancel timetable function running");
 	$.mobile.navigate( "#timetablePage" ); //return to deadline page
 }
+
+//this is all taken from stack overflow
+/*function loadDeadlines() {
+            $('#dname1').val(localStorage.name1);
+            $('#ddate1').val(localStorage.date1);
+            $('#dname2').val(localStorage.name2);
+            $('#ddate2').val(localStorage.date2);
+
+        }
+function saveDeadlines() {
+            var dname1 = document.getElementById("dname1").value;
+            var ddate1 = document.getElementById("ddate1").value;
+            var dname2 = document.getElementById("dname2").value;
+            var ddate2 = document.getElementById("ddate2").val();
+
+            localStorage.dname1 = dname1;
+            localStorage.ddate1 = ddate1;
+            localStorage.dname2 = dname2;
+            localStorage.ddate2 = ddate2;
+        }
+*/

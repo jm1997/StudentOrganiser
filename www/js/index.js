@@ -46,7 +46,6 @@ $(document).on("pagecreate", function () {
     console.log("button clicked");
     openReminder();
     });
-}
 
 });
 
@@ -91,6 +90,12 @@ $(document).on("pagecreate", "#addDeadlinePage", function () {
 
 //this runs everytime timetable page is created
 $(document).on("pagecreate", "#timetablePage", function () {
+    
+    //ADD TIMETABLE BUTTON
+    $('#addTimetableButton').on("click", function(){
+    console.log("button clicked");
+    openAddTimetable();
+    });
 
     console.log("timetable page created");
     //if there is something (not null) in local storage for monday
@@ -121,13 +126,7 @@ $(document).on("pagecreate", "#timetablePage", function () {
     if (localStorage.getItem("localFridayTableStorage") != null) {
         //replaces inner html with stored string
       document.getElementById("timetableFriday").innerHTML = localStorage.getItem("localFridayTableStorage");
-    }
-    
-    //ADD TIMETABLE BUTTON
-    $('#addTimetableButton').on("click", function(){
-    console.log("button clicked");
-    openAddTimetable();
-    });
+    } 
 
 })
 
@@ -153,14 +152,15 @@ $(document).on("pagecreate", "#addTimetablePage", function () {
 //HOME BUTTON
 function openHome() {
     console.log("open home function running");
-	$.mobile.navigate("#homePage"); //open home page
+    //open home page
+	$.mobile.navigate("#homePage"); 
 }
 
 //DEADLINE BUTTON
 function openDeadlines() {
     console.log("open deadlines function running");
 	$.mobile.navigate("#deadlinePage"); //open deadline page
-    //empty table
+    //empty the table
     deadlineList.innerHTML=""
     //run add to array function for each item in deadlines array
     deadlines.forEach(addToArray)
@@ -169,39 +169,42 @@ function openDeadlines() {
 //TIMETABLE BUTTON
 function openTimetable() {
     console.log("open timetable function running");
-	$.mobile.navigate( "#timetablePage" ); //open timetable page
+    //open timetable page
+	$.mobile.navigate( "#timetablePage" ); 
 }
 
     
 //REMINDER BUTTON
 function openReminder() {
-console.log("open reminder function running");
-$.mobile.navigate( "#reminderPage" ); //open reminder page
+    console.log("open reminder function running");
+    //open reminder page
+    $.mobile.navigate( "#reminderPage" ); 
 }
 
 //ADD DEADLINE BUTTON
 function openAddDeadline() {
     console.log("open add deadlines function running");
-    $.mobile.navigate( "#addDeadlinePage" ); //open add deadline page
+    //open add deadline page
+    $.mobile.navigate( "#addDeadlinePage" ); 
 }
 
-//ADD TIMETBALE BUTTON
+//ADD TIMETABLE BUTTON
 function openAddTimetable() {
     console.log("open add timetable function running");
-    $.mobile.navigate( "#addTimetablePage" ); //open add timetable page
+    //open add timetable page
+    $.mobile.navigate( "#addTimetablePage" ); 
 }
 
 //ADD DATE BUTTON
 function addDate() {
     console.log("open add date function running");
-    options.date = datePicker.show(options, onSuccess, onError);
-    $.mobile.navigate( "#addDeadlinePage" ); //open add deadline page
+    //open add deadline page
+    $.mobile.navigate( "#addDeadlinePage" ); 
 }
 
 //SAVE DEADLINES
 function save () {
   //function for deleting row
-
 
   //selects deadline table
   var deadlineList = document.getElementById("deadlineList");

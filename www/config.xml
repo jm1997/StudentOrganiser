@@ -23,6 +23,6 @@
 	<access origin="*"/>
    	<plugin name="cordova-plugin-whitelist" version="1" />
     <!-- https://www.npmjs.com/package/cordova-plugin-datepicker -->
-    <plugin name="cordova-plugin-datepicker"/>
+    <plugin name="cordova-plugin-local-notification" version="0.9" />
     
 </widget>

@@ -2,7 +2,6 @@ document.addEventListener("deviceready", function () {
     console.log("enhance panel");
     $('#mypanel').enhanceWithin().panel();
 
-
     //OPEN MENU WITH SWIPE
     $('body').on('swiperight', function () {
         console.log("open panel with swipe");
@@ -41,6 +40,13 @@ $(document).on("pagecreate", function () {
     console.log("button clicked");
     openTimetable();
     });
+    
+    //TIMETABLE BUTTON
+    $('#reminderButton').on("click", function(){
+    console.log("button clicked");
+    openReminder();
+    });
+}
 
 });
 
@@ -144,7 +150,6 @@ $(document).on("pagecreate", "#addTimetablePage", function () {
 
 })
 
-
 //HOME BUTTON
 function openHome() {
     console.log("open home function running");
@@ -154,36 +159,36 @@ function openHome() {
 //DEADLINE BUTTON
 function openDeadlines() {
     console.log("open deadlines function running");
-
 	$.mobile.navigate("#deadlinePage"); //open deadline page
-
     //empty table
     deadlineList.innerHTML=""
     //run add to array function for each item in deadlines array
     deadlines.forEach(addToArray)
-
 }
 
 //TIMETABLE BUTTON
 function openTimetable() {
     console.log("open timetable function running");
-
 	$.mobile.navigate( "#timetablePage" ); //open timetable page
+}
+
+    
+//REMINDER BUTTON
+function openReminder() {
+console.log("open reminder function running");
+$.mobile.navigate( "#reminderPage" ); //open reminder page
 }
 
 //ADD DEADLINE BUTTON
 function openAddDeadline() {
     console.log("open add deadlines function running");
     $.mobile.navigate( "#addDeadlinePage" ); //open add deadline page
-
-
 }
 
 //ADD TIMETBALE BUTTON
 function openAddTimetable() {
     console.log("open add timetable function running");
     $.mobile.navigate( "#addTimetablePage" ); //open add timetable page
-
 }
 
 //ADD DATE BUTTON
@@ -303,3 +308,4 @@ function cancelTT() {
   console.log("cancel timetable function running");
 	$.mobile.navigate( "#timetablePage" ); //return to timetable page
 }
+    

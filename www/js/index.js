@@ -46,6 +46,11 @@ $(document).on("pagecreate", function () {
     console.log("button clicked");
     openReminder();
     });
+    
+    //NOTIFICATION REMINDER BUTTON
+    $('#notificationButton').on('click', function() {
+		createReminder();
+	});
 
 });
 
@@ -310,5 +315,17 @@ function saveTT() {
 function cancelTT() {
   console.log("cancel timetable function running");
 	$.mobile.navigate( "#timetablePage" ); //return to timetable page
+}
+
+function createReminder() {
+    
+    var reminderContent = reminderName.value
+    
+    cordova.plugins.notification.local.schedule({ 
+    	id: 		1,
+        title: 		"S.O.S Reminder",
+        message: 	reminderContent,
+   	});
+    
 }
     

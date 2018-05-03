@@ -10,6 +10,8 @@ document.addEventListener("deviceready", function () {
 
 });
 
+var deadlines = [];
+
   function deleteRow(rowElement) {
         rowElement.remove();
         //gets monday timetable elements inner html and turns it into string then replaces special characters with blank
@@ -23,25 +25,25 @@ $(document).on("pagecreate", function () {
 
     console.log("page created");
 
-    //HOME BUTTON
+    //HOME PAGE BUTTON
     $('#homeButton').on("click", function () { //run openHome function when home button is clicked
     console.log("button clicked");
     openHome();
     });
 
-    //DEADLINE BUTTON
+    //DEADLINE PAGE BUTTON
     $('#deadlineButton').on("click", function () { //run openDeadlines function when deadline button is clicked
     console.log("button clicked");
     openDeadlines();
     });
 
-    //TIMETABLE BUTTON
+    //TIMETABLE PAGE BUTTON
     $('#timetableButton').on("click", function(){
     console.log("button clicked");
     openTimetable();
     });
     
-    //TIMETABLE BUTTON
+    //REMINDER PAGE BUTTON
     $('#reminderButton').on("click", function(){
     console.log("button clicked");
     openReminder();
@@ -66,7 +68,7 @@ $(document).on("pagecreate", "#deadlinePage", function () {
       document.getElementById("deadlineList").innerHTML = localStorage.getItem("localDeadlineTableStorage");
     }
 
-    //ADD DEADLINE BUTTON
+    //ADD DEADLINE PAGE BUTTON
     $('#addDeadlineButton').on("click", function(){
     console.log("button clicked");
     openAddDeadline();
@@ -127,7 +129,7 @@ $(document).on("pagecreate", "#timetablePage", function () {
       document.getElementById("timetableThursday").innerHTML = localStorage.getItem("localThursdayTableStorage");
     }
     
-    //if there is something (not null) in local storage forfriday
+    //if there is something (not null) in local storage for friday
     if (localStorage.getItem("localFridayTableStorage") != null) {
         //replaces inner html with stored string
       document.getElementById("timetableFriday").innerHTML = localStorage.getItem("localFridayTableStorage");
@@ -140,13 +142,13 @@ $(document).on("pagecreate", "#addTimetablePage", function () {
 
     console.log("add timetable page created");
 
-    //SAVE BUTTON
+    //SAVE BUTTON ON ADD TIMETABLE PAGE
     $('#saveButtonTimetable').on("click", function(){
     console.log("button clicked");
     saveTT();
     });
 
-    //CANCEL BUTTON
+    //CANCEL BUTTON ON ADD TIMETABLE PAGE
     $('#cancelButtonTimetable').on("click", function(){
     console.log("button clicked");
     cancelTT();
@@ -209,6 +211,9 @@ function addDate() {
 
 //SAVE DEADLINES
 function save () {
+    
+    console.log("save deadlines function running");
+    
   //function for deleting row
 
   //selects deadline table

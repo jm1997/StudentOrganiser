@@ -10,9 +10,10 @@ document.addEventListener("deviceready", function () {
 
 });
 
+//decalre deadlines array
 var deadlines = [];
 
-  function deleteRow(rowElement) {
+function deleteRow(rowElement) {
         rowElement.remove();
         //gets monday timetable elements inner html and turns it into string then replaces special characters with blank
         var deadlineTableContents = JSON.stringify(document.getElementById("deadlineList").innerHTML).replace(/\\n/g, "").replace(/\\"/g, "").replace(/\"/g, "");
@@ -105,34 +106,34 @@ $(document).on("pagecreate", "#timetablePage", function () {
     });
 
     console.log("timetable page created");
-    //if there is something (not null) in local storage for monday
-    if (localStorage.getItem("localMondayTableStorage") != null) {
+        //if there is something (not null) in local storage for monday
+        if (localStorage.getItem("localMondayTableStorage") != null) {
         //replaces inner html with stored string
-      document.getElementById("timetableMonday").innerHTML = localStorage.getItem("localMondayTableStorage");
+        document.getElementById("timetableMonday").innerHTML = localStorage.getItem("localMondayTableStorage");
     }
     
     //if there is something (not null) in local storage for tuesday
-    if (localStorage.getItem("localTuesdayTableStorage") != null) {
+        if (localStorage.getItem("localTuesdayTableStorage") != null) {
         //replaces inner html with stored string
-      document.getElementById("timetableTuesday").innerHTML = localStorage.getItem("localTuesdayTableStorage");
+        document.getElementById("timetableTuesday").innerHTML = localStorage.getItem("localTuesdayTableStorage");
     }
     
     //if there is something (not null) in local storage for wednesday
     if (localStorage.getItem("localWednesdayTableStorage") != null) {
         //replaces inner html with stored string
-      document.getElementById("timetableWednesday").innerHTML = localStorage.getItem("localWednesdayTableStorage");
+        document.getElementById("timetableWednesday").innerHTML = localStorage.getItem("localWednesdayTableStorage");
     }
 
     //if there is something (not null) in local storage for thursday
     if (localStorage.getItem("localThursdayTableStorage") != null) {
         //replaces inner html with stored string
-      document.getElementById("timetableThursday").innerHTML = localStorage.getItem("localThursdayTableStorage");
+        document.getElementById("timetableThursday").innerHTML = localStorage.getItem("localThursdayTableStorage");
     }
     
     //if there is something (not null) in local storage for friday
     if (localStorage.getItem("localFridayTableStorage") != null) {
         //replaces inner html with stored string
-      document.getElementById("timetableFriday").innerHTML = localStorage.getItem("localFridayTableStorage");
+        document.getElementById("timetableFriday").innerHTML = localStorage.getItem("localFridayTableStorage");
     } 
 
 })
@@ -214,78 +215,78 @@ function save () {
     
     console.log("save deadlines function running");
     
-  //function for deleting row
+    //function for deleting row
 
-  //selects deadline table
-  var deadlineList = document.getElementById("deadlineList");
-  //creates table row element <tr></tr>
-  var row = document.createElement("tr");
-  //creates table cell elements <td></td>
-  var nameCell = document.createElement("td");
-  var dateCell = document.createElement("td");
-  var deleteCell = document.createElement("td");
+    //selects deadline table
+    var deadlineList = document.getElementById("deadlineList");
+    //creates table row element <tr></tr>
+    var row = document.createElement("tr");
+    //creates table cell elements <td></td>
+    var nameCell = document.createElement("td");
+    var dateCell = document.createElement("td");
+    var deleteCell = document.createElement("td");
 
-  //creates button element
-  var deleteButton = document.createElement("BUTTON");
+    //creates button element
+    var deleteButton = document.createElement("BUTTON");
     //creates delete for button elemtnet
-  var deleteButtonText = document.createTextNode("Delete");
+    var deleteButtonText = document.createTextNode("Delete");
     //adds button text from above to button element above
-  deleteButton.appendChild(deleteButtonText);
+    deleteButton.appendChild(deleteButtonText);
     //sets onclick equal to the function above
-  deleteButton.setAttribute('onclick', "deleteRow(this.parentElement.parentElement)");
+    deleteButton.setAttribute('onclick', "deleteRow(this.parentElement.parentElement)");
 
     //creates text for name of deadline for name cell
-  var nameCellText = document.createTextNode(deadlineName.value);
+    var nameCellText = document.createTextNode(deadlineName.value);
     //creates text for date of deadline for name cell
-  var dateCellText = document.createTextNode(new Date(deadlineDate.value));
+    var dateCellText = document.createTextNode(new Date(deadlineDate.value));
 
     //adds text to cell element
-  nameCell.appendChild(nameCellText);
+    nameCell.appendChild(nameCellText);
     //adds text to cell element
-  dateCell.appendChild(dateCellText);
+    dateCell.appendChild(dateCellText);
     //adds delete button delete cell element
-  deleteCell.appendChild(deleteButton)
+    deleteCell.appendChild(deleteButton)
 
-  //adds everything to row element
-  row.appendChild(dateCell);
-  row.appendChild(nameCell);
-  row.appendChild(deleteCell);
+    //adds everything to row element
+    row.appendChild(dateCell);
+    row.appendChild(nameCell);
+    row.appendChild(deleteCell);
     
     //adds row elemetn to deadline table
-  deadlineList.appendChild(row);
+    deadlineList.appendChild(row);
     
     //gets monday timetable elements inner html and turns it into string then replaces special characters with blank
     var deadlineTableContents = JSON.stringify(document.getElementById("deadlineList").innerHTML).replace(/\\n/g, "").replace(/\\"/g, "").replace(/\"/g, "");
     //saves to local storage
     localStorage.setItem("localDeadlineTableStorage", deadlineTableContents);
   
-  //open deadline page
-  $.mobile.navigate( "#deadlinePage" );
+    //open deadline page
+    $.mobile.navigate( "#deadlinePage" );
 
 }
 
 //CANCEL
 function cancel() {
-  console.log("cancel function running");
+    console.log("cancel function running");
 	$.mobile.navigate( "#deadlinePage" ); //return to deadline page
 }
 
 //SAVE TIMETABLE
 function saveTT() {
-  // gets the selected date value and sets it to lowercase
-  var lectureDay =  dayPicker.options[dayPicker.options.selectedIndex].value.toLowerCase()
+    // gets the selected date value and sets it to lowercase
+    var lectureDay =  dayPicker.options[dayPicker.options.selectedIndex].value.toLowerCase()
 
-  // gets the name of the lecture
-  var lectureName = document.getElementById("lectureName").value;
+    // gets the name of the lecture
+    var lectureName = document.getElementById("lectureName").value;
 
-  // gets the time of the lecture
-  var lectureTime = document.getElementById("lectureTime").value;
+    // gets the time of the lecture
+    var lectureTime = document.getElementById("lectureTime").value;
 
-  // picks the correct slot by combining the lectureday and lecture time
-  var timetableSlot = document.getElementById(lectureDay + lectureTime);
+    // picks the correct slot by combining the lectureday and lecture time
+    var timetableSlot = document.getElementById(lectureDay + lectureTime);
 
-  // sets the value of the above slot with the string entered into the lectureName
-  timetableSlot.innerHTML = lectureName;
+    // sets the value of the above slot with the string entered into the lectureName
+    timetableSlot.innerHTML = lectureName;
 
     //gets monday timetable elements inner html and turns it into string then replaces special characters with blank
     var mondayTableContents = JSON.stringify(document.getElementById("timetableMonday").innerHTML).replace(/\\n/g, "").replace(/\\"/g, "").replace(/\"/g, "");
@@ -312,13 +313,13 @@ function saveTT() {
     //saves to local storage
     localStorage.setItem("localFridayTableStorage", fridayTableContents);
 
-
-	$.mobile.navigate( "#timetablePage" ); //return to timetable page
+    //return to timetable page
+	$.mobile.navigate( "#timetablePage" ); 
 }
 
 //CANCEL timetable
 function cancelTT() {
-  console.log("cancel timetable function running");
+    console.log("cancel timetable function running");
 	$.mobile.navigate( "#timetablePage" ); //return to timetable page
 }
 
@@ -326,11 +327,10 @@ function createReminder() {
     
     var reminderContent = reminderName.value
     
+    //puts out notification immediately
     cordova.plugins.notification.local.schedule({ 
     	id: 		1,
         title: 		"S.O.S Reminder",
         message: 	reminderContent,
-   	});
-    
-}
-    
+   	});  
+}   

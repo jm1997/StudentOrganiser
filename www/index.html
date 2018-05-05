@@ -7,16 +7,15 @@
     
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
 
-<!-- -->
+<!---->
 
-    <title>Student Organisation App</title>
+    <title>Student Organisation System</title>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 	<script src="jquery-mobile/jquery-1.8.3.min.js" type="text/javascript"></script>
     <script src="jquery-mobile/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
     <script src="js/index.js"type="text/javascript" charset="utf-8"></script>
 	<link href="jquery-mobile/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
-    <link rel="apple-touch-startup-image" href="img/splash.jpg" />
 
 </head>
 
@@ -33,17 +32,18 @@
        <!-- HEADER BAR -->
 	   <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
 		  <h1>S.O.S</h1>
+           <!--Menu Panel-->
            <a href="#mypanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-ajax="false">Menu</a>
 	   </div>
 
         <!-- PAGE CONTENT -->
         <div data-role="main" class="ui-content">
-            <h2 align="center">Welcome to S.O.S - Student Organisational System</h2>
+            <h2 align="center">Welcome to S.O.S - Student Organisation System</h2>
         </div>
 
        <!-- FOOTER BAR -->
 	   <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
-		  <h1>Sample Footer Text</h1>
+		  <h1>Footer</h1>
 	   </div>
 
 	</div> <!-- close home page -->
@@ -59,7 +59,9 @@
        <!-- HEADER BAR -->
        <div data-role="header" data-position="fixed"> <!-- fixed to top of screen -->
            <h1>S.O.S - Timetable </h1>
+           <!--Menu Panel-->
            <a href="#mypanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-ajax="false">Menu</a>
+           <!--Add to timetable button-->
            <button id="addTimetableButton" data-icon="plus"></button>
        </div>
 
@@ -68,10 +70,12 @@
             <table id="timetableMonday">
                 
                <tr>
+                   <!--non breaking space - allows more than one space after another-->
                 <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                 <th>Monday</th>
                </tr>
                 
+                <!--create table layout with headings in old and IDs-->
                 <tr><td><strong>9:00</strong></td><td id="monday9:00"></td></tr>               
                 <tr><td><strong>10:00</strong></td><td id="monday10:00"></td></tr>
                 <tr><td><strong>11:00</strong></td><td id="monday11:00"></td></tr>
@@ -170,7 +174,7 @@
 
        <!-- FOOTER BAR -->
        <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
-            <h1>Sample Footer Text</h1>
+            <h1>Footer</h1>
        </div>
 
 </div> <!-- close timetable page -->
@@ -179,7 +183,7 @@
 <!-- PAGE BREAK -->
 <!-- PAGE BREAK -->
 
-    <!-- ADD TIMETABLE PAGE -->
+    <!-- ADD TO TIMETABLE PAGE -->
     <div data-role="page" id="addTimetablePage" data-dom-cache="false">
 
         <!-- HEADER BAR -->
@@ -197,6 +201,7 @@
                 <li>
                     <div data-role="fieldcontain">
                         <label for="lectureDay">Lecture Day</label>
+                        <!--drop down to choose day-->
                         <select id="dayPicker">
                           <option value="Monday" selected="selected">Monday</option>
                           <option value="Tuesday">Tuesday</option>
@@ -207,18 +212,20 @@
 
                     </div>
                 </li>
+                
                 <!-- Lecture name entry -->
                 <li>
-                <div data-role="fieldcontain">
-                    <label for="lectureName">Lecture Name:</label>
-                    <input type="text" name="lectureName" id="lectureName" value="" placeholder="e.g. Seminar" />
-                </div>
+                    <div data-role="fieldcontain">
+                        <label for="lectureName">Lecture Name:</label>
+                        <input type="text" name="lectureName" id="lectureName" value="" placeholder="e.g. Seminar" />
+                    </div>
                 </li>
 
                 <!-- Lecture time entry -->
                 <li>
                     <div data-role="fieldcontain">
                         <label for="lectureTime">Lecture Time: (24 Hr)</label>
+                        <!--drop down to pick time-->
                         <select id="lectureTime">
                           <option value="9:00" selected="selected">9:00</option>
                           <option value="10:00">10:00</option>
@@ -238,13 +245,14 @@
 
                 <li><button id="saveButtonTimetable" data-icon="check">Save</button></li>
                 <li><button id="cancelButtonTimetable" data-icon="delete">Cancel</button></li>
+                
             </ul>
 
         </div>
 
         <!-- FOOTER BAR -->
         <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
-            <h1>Sample Footer Text</h1>
+            <h1>Footer</h1>
         </div>
 
     </div> <!-- close add deadline page -->
@@ -265,7 +273,8 @@
 
         <div data-role="main" class="ui-content">
             <h2 align="center">Deadline Page</h2>
-
+            
+            <!--declare table-->
             <table id="deadlineList">
 
             </table>
@@ -274,7 +283,7 @@
 
         <!-- FOOTER BAR -->
         <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
-            <h1>Sample Footer Text</h1>
+            <h1>Footer</h1>
         </div>
 
     </div> <!-- close deadline page -->
@@ -309,7 +318,7 @@
                 <li>
                     <div data-role="fieldcontain">
                         <label for="deadlineDate">Deadline Date:</label>
-                        <input type="date" name="deadlineDate" id="deadlineDate" value="" placeholder="YYYY-MM-DD" />
+                        <input type="date" name="deadlineDate" id="deadlineDate" value=""/>
                     </div>
                 </li>
 
@@ -323,7 +332,7 @@
 
         <!-- FOOTER BAR -->
         <div data-role="footer" data-position="fixed"> <!-- fixed to bottom of screen -->
-            <h1>Sample Footer Text</h1>
+            <h1>Footer</h1>
         </div>
 
     </div> <!-- close add deadline page -->

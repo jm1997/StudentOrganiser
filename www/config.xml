@@ -6,14 +6,14 @@
         id        = "mob.app.dev.lifecycle"
         version   = "1.0.0">
 
-    <name>Student Organiser</name>
+    <name>S.O.S</name>
 
     <description>
         COMP2361 Assignment 02 16016599
     </description>
 
     <author href="worcester.ac.uk" email="masj5_16@uni.worc.ac.uk">
-        WBS Computing
+        Jessica Mason
     </author>
 
     <preference name="phonegap-version" value="cli-7.0.1" />
@@ -22,7 +22,6 @@
 	
 	<access origin="*"/>
    	<plugin name="cordova-plugin-whitelist" version="1" />
-    <!-- https://www.npmjs.com/package/cordova-plugin-datepicker -->
     <plugin name="cordova-plugin-local-notification" version="0.8" />
     
 </widget>
